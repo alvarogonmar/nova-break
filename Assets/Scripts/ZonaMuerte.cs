@@ -7,6 +7,12 @@ public class ZonaMuerte : MonoBehaviour
         if (collision.CompareTag("Orbe"))
         {
             Debug.Log("Perdiste una vida");
+            OrbeMovimiento orbe = collision.GetComponent<OrbeMovimiento>();
+
+            if (orbe != null)
+            {
+                orbe.ReiniciarOrbe();
+            }
         }
     }
 }
