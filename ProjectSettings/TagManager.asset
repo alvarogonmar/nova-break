@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Orbe
   - Nave
+  - Asteroide
   layers:
   - Default
   - TransparentFX
