@@ -158,6 +158,10 @@ MonoBehaviour:
   distanciaMinima: 1.15
   sonidoExplosion: {fileID: 8300000, guid: 83d8efc3c1f004701bd8370482382844, type: 3}
   volumenExplosion: 0.8
+  spriteEspecial: {fileID: 0}
+  cantidadEspeciales: 0
+  incrementoVelocidad: 0
+  incrementoVelocidadEspecial: 1.2
 --- !u!58 &28754499
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1268,6 +1272,7 @@ MonoBehaviour:
   m_Name:
   m_EditorClassIdentifier:
   velocidad: 6
+  velocidadMaxima: 13
   maxAnguloRebote: 65
   posicionInicio: {x: 0, y: 1}
   esperaReinicio: 0.8
