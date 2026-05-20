@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: 6223afcfa25484185bffe464a6daa083
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1855628775583546009
+    second: asteroide_B_grande_0
+  - first:
+      213: -470614579610626320
+    second: asteroide_B_grande_1
+  - first:
+      213: -3179716018719783678
+    second: asteroide_B_grande_2
+  - first:
+      213: 7907738559880049474
+    second: asteroide_B_grande_3
+  - first:
+      213: -8435841122869821463
+    second: asteroide_B_grande_4
+  - first:
+      213: -1539399635593225447
+    second: asteroide_B_grande_5
+  - first:
+      213: 472547401201868402
+    second: asteroide_B_grande_6
+  - first:
+      213: -2860909821861975719
+    second: asteroide_B_grande_7
+  - first:
+      213: 9071998354047255137
+    second: asteroide_B_grande_8
+  - first:
+      213: -4021753372069217723
+    second: asteroide_B_grande_9
+  - first:
+      213: 3041932684734530717
+    second: asteroide_B_grande_10
+  - first:
+      213: 8537295961143545323
+    second: asteroide_B_grande_11
+  - first:
+      213: 2200485496025699776
+    second: asteroide_B_grande_12
+  - first:
+      213: 1841193337007220525
+    second: asteroide_B_grande_13
+  - first:
+      213: -6517025198446628831
+    second: asteroide_B_grande_14
+  - first:
+      213: -4560536834330625475
+    second: asteroide_B_grande_15
+  - first:
+      213: -1138821286640820385
+    second: asteroide_B_grande_16
+  - first:
+      213: -5280544417440525121
+    second: asteroide_B_grande_17
+  - first:
+      213: 425346177441430802
+    second: asteroide_B_grande_18
+  - first:
+      213: 1611607216201053741
+    second: asteroide_B_grande_19
+  - first:
+      213: 7362389140749624840
+    second: asteroide_B_grande_20
+  - first:
+      213: -260421764617886593
+    second: asteroide_B_grande_21
+  - first:
+      213: -338033364907639232
+    second: asteroide_B_grande_22
+  - first:
+      213: -4259096625212941057
+    second: asteroide_B_grande_23
+  - first:
+      213: -335771697552568697
+    second: asteroide_B_grande_24
+  - first:
+      213: 5256237582251190821
+    second: asteroide_B_grande_25
+  - first:
+      213: 4663072939403845784
+    second: asteroide_B_grande_26
+  - first:
+      213: 3811231800570497292
+    second: asteroide_B_grande_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: asteroide_B_grande_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 1494
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99a76a33a8480c910800000000000000
+      internalID: 1855628775583546009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_1
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 818
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f65034888a0879f0800000000000000
+      internalID: -470614579610626320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_2
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 823
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2058699b0216fd3d0800000000000000
+      internalID: -3179716018719783678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_3
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 823
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2433f4eb25eedbd60800000000000000
+      internalID: 7907738559880049474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_4
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 796
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ef36b9913fddea80800000000000000
+      internalID: -8435841122869821463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_5
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 799
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b99110034f2aae0800000000000000
+      internalID: -1539399635593225447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_6
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 811
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27edb249b53de8600800000000000000
+      internalID: 472547401201868402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_7
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 803
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 959ad7dbca10c48d0800000000000000
+      internalID: -2860909821861975719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_8
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 789
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1624aefff6636ed70800000000000000
+      internalID: 9071998354047255137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_9
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 794
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ab593cd9cdf28c0800000000000000
+      internalID: -4021753372069217723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_10
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 766
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d948040f8ad173a20800000000000000
+      internalID: 3041932684734530717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_11
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 767
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bed8652b1719a7670800000000000000
+      internalID: 8537295961143545323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_12
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 785
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c5d20466e1b98e10800000000000000
+      internalID: 2200485496025699776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_13
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 759
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d27a12fb59b3d8910800000000000000
+      internalID: 1841193337007220525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_14
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 713
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 120b1565c10ee85a0800000000000000
+      internalID: -6517025198446628831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_15
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 729
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3a73a479e7b5b0c0800000000000000
+      internalID: -4560536834330625475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_16
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 727
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5fde13d2181230f0800000000000000
+      internalID: -1138821286640820385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_17
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 723
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb419c174dcb7b6b0800000000000000
+      internalID: -5280544417440525121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_18
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 679
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21d77f4481227e500800000000000000
+      internalID: 425346177441430802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_19
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 638
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d26be1779349d5610800000000000000
+      internalID: 1611607216201053741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_20
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 511
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80623987ae57c2660800000000000000
+      internalID: 7362389140749624840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_21
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 256
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f74ab2ce8cbc26cf0800000000000000
+      internalID: -260421764617886593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_22
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 255
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04e337212701f4bf0800000000000000
+      internalID: -338033364907639232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_23
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 255
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc1e1e5f26a4e4c0800000000000000
+      internalID: -4259096625212941057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_24
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 263
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78ecfb98b69175bf0800000000000000
+      internalID: -335771697552568697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_25
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 259
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52ae3297b38e1f840800000000000000
+      internalID: 5256237582251190821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_26
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 255
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89027e2e12096b040800000000000000
+      internalID: 4663072939403845784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroide_B_grande_27
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 251
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c094dad312734e430800000000000000
+      internalID: 3811231800570497292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      asteroide_B_grande_0: 1855628775583546009
+      asteroide_B_grande_1: -470614579610626320
+      asteroide_B_grande_10: 3041932684734530717
+      asteroide_B_grande_11: 8537295961143545323
+      asteroide_B_grande_12: 2200485496025699776
+      asteroide_B_grande_13: 1841193337007220525
+      asteroide_B_grande_14: -6517025198446628831
+      asteroide_B_grande_15: -4560536834330625475
+      asteroide_B_grande_16: -1138821286640820385
+      asteroide_B_grande_17: -5280544417440525121
+      asteroide_B_grande_18: 425346177441430802
+      asteroide_B_grande_19: 1611607216201053741
+      asteroide_B_grande_2: -3179716018719783678
+      asteroide_B_grande_20: 7362389140749624840
+      asteroide_B_grande_21: -260421764617886593
+      asteroide_B_grande_22: -338033364907639232
+      asteroide_B_grande_23: -4259096625212941057
+      asteroide_B_grande_24: -335771697552568697
+      asteroide_B_grande_25: 5256237582251190821
+      asteroide_B_grande_26: 4663072939403845784
+      asteroide_B_grande_27: 3811231800570497292
+      asteroide_B_grande_3: 7907738559880049474
+      asteroide_B_grande_4: -8435841122869821463
+      asteroide_B_grande_5: -1539399635593225447
+      asteroide_B_grande_6: 472547401201868402
+      asteroide_B_grande_7: -2860909821861975719
+      asteroide_B_grande_8: 9071998354047255137
+      asteroide_B_grande_9: -4021753372069217723
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1898 @@
+fileFormatVersion: 2
+guid: bc5fbbb3fee5749a6ae1f718e08655b7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3652978737160420065
+    second: boss_capa3_0
+  - first:
+      213: -4740289852913743215
+    second: boss_capa3_1
+  - first:
+      213: -7500742898703744335
+    second: boss_capa3_2
+  - first:
+      213: 4348257709527180646
+    second: boss_capa3_3
+  - first:
+      213: 6963650954908322021
+    second: boss_capa3_4
+  - first:
+      213: -4642612005187376407
+    second: boss_capa3_5
+  - first:
+      213: 3527714029391454956
+    second: boss_capa3_6
+  - first:
+      213: 5471176829305384773
+    second: boss_capa3_7
+  - first:
+      213: -3804159839076680398
+    second: boss_capa3_8
+  - first:
+      213: 8503370066532246059
+    second: boss_capa3_9
+  - first:
+      213: -9041168076496305601
+    second: boss_capa3_10
+  - first:
+      213: -1782830961162547631
+    second: boss_capa3_11
+  - first:
+      213: -7248052232108984457
+    second: boss_capa3_12
+  - first:
+      213: -5141707666440955938
+    second: boss_capa3_13
+  - first:
+      213: 6826849306812807202
+    second: boss_capa3_14
+  - first:
+      213: 6114915862220066436
+    second: boss_capa3_15
+  - first:
+      213: 2106434277263203810
+    second: boss_capa3_16
+  - first:
+      213: 3426487446221523549
+    second: boss_capa3_17
+  - first:
+      213: -8430017362127387784
+    second: boss_capa3_18
+  - first:
+      213: -8154129256965018710
+    second: boss_capa3_19
+  - first:
+      213: -4622783548247201223
+    second: boss_capa3_20
+  - first:
+      213: 1962659790221650509
+    second: boss_capa3_21
+  - first:
+      213: -6333282457600464065
+    second: boss_capa3_22
+  - first:
+      213: 7565111950208829726
+    second: boss_capa3_23
+  - first:
+      213: 5812465337283387473
+    second: boss_capa3_24
+  - first:
+      213: 7045949793000297310
+    second: boss_capa3_25
+  - first:
+      213: 127168195126928413
+    second: boss_capa3_26
+  - first:
+      213: -6382118496677928872
+    second: boss_capa3_27
+  - first:
+      213: -5108369610748830802
+    second: boss_capa3_28
+  - first:
+      213: -5176975876013514761
+    second: boss_capa3_29
+  - first:
+      213: -6833604920834509926
+    second: boss_capa3_30
+  - first:
+      213: -2681054971617120774
+    second: boss_capa3_31
+  - first:
+      213: 4218183399762904498
+    second: boss_capa3_32
+  - first:
+      213: 1877021867195523507
+    second: boss_capa3_33
+  - first:
+      213: 3130225623594747550
+    second: boss_capa3_34
+  - first:
+      213: -9169111846957273560
+    second: boss_capa3_35
+  - first:
+      213: -8126393872950087739
+    second: boss_capa3_36
+  - first:
+      213: 8133415865804471882
+    second: boss_capa3_37
+  - first:
+      213: -2848745868870342967
+    second: boss_capa3_38
+  - first:
+      213: -2675354439623215567
+    second: boss_capa3_39
+  - first:
+      213: 5206086634863351342
+    second: boss_capa3_40
+  - first:
+      213: 3877040506709489881
+    second: boss_capa3_41
+  - first:
+      213: -7689397882259253086
+    second: boss_capa3_42
+  - first:
+      213: -925708994412601411
+    second: boss_capa3_43
+  - first:
+      213: -7689544647875730023
+    second: boss_capa3_44
+  - first:
+      213: 3432494692702631252
+    second: boss_capa3_45
+  - first:
+      213: -1526460563832688388
+    second: boss_capa3_46
+  - first:
+      213: -4154086185512468474
+    second: boss_capa3_47
+  - first:
+      213: -3635213444881734868
+    second: boss_capa3_48
+  - first:
+      213: 3046910641873837506
+    second: boss_capa3_49
+  - first:
+      213: -7936492115418332952
+    second: boss_capa3_50
+  - first:
+      213: -4105355297083601479
+    second: boss_capa3_51
+  - first:
+      213: 5395138445814142624
+    second: boss_capa3_52
+  - first:
+      213: -8422835228034739175
+    second: boss_capa3_53
+  - first:
+      213: -2330953116800170092
+    second: boss_capa3_54
+  - first:
+      213: -6139201661395270193
+    second: boss_capa3_55
+  - first:
+      213: -4383006051116462540
+    second: boss_capa3_56
+  - first:
+      213: 814713427229997744
+    second: boss_capa3_57
+  - first:
+      213: 3300229060611933558
+    second: boss_capa3_58
+  - first:
+      213: -5777056345132779504
+    second: boss_capa3_59
+  - first:
+      213: 6761240935998463054
+    second: boss_capa3_60
+  - first:
+      213: 182022382878104492
+    second: boss_capa3_61
+  - first:
+      213: -5438581205251150112
+    second: boss_capa3_62
+  - first:
+      213: -7374464005176746258
+    second: boss_capa3_63
+  - first:
+      213: 204916336280413905
+    second: boss_capa3_64
+  - first:
+      213: -856468343535164118
+    second: boss_capa3_65
+  - first:
+      213: -4038854037403207805
+    second: boss_capa3_66
+  - first:
+      213: -8452315117039830587
+    second: boss_capa3_67
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: boss_capa3_0
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 850
+        width: 95
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ea7080aeccf1b230800000000000000
+      internalID: 3652978737160420065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_1
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 865
+        width: 43
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19a00b07e7b173eb0800000000000000
+      internalID: -4740289852913743215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_2
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 935
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b2ca33031208e790800000000000000
+      internalID: -7500742898703744335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_3
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 850
+        width: 61
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665a838495d185c30800000000000000
+      internalID: 4348257709527180646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_4
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 920
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e8ce1306abd3a060800000000000000
+      internalID: 6963650954908322021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_5
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 57
+        width: 899
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eaa7d89af0229fb0800000000000000
+      internalID: -4642612005187376407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_6
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 851
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce22a071835f4f030800000000000000
+      internalID: 3527714029391454956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_7
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 887
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f6816b6568deb40800000000000000
+      internalID: 5471176829305384773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_8
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 863
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23df60b18c8e43bc0800000000000000
+      internalID: -3804159839076680398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_9
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 852
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b222851d50a020670800000000000000
+      internalID: 8503370066532246059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_10
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 879
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3206dd5981578280800000000000000
+      internalID: -9041168076496305601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_11
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 845
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15e8659cfac1247e0800000000000000
+      internalID: -1782830961162547631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_12
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 866
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 777baaf85eeb96b90800000000000000
+      internalID: -7248052232108984457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_13
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 877
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed752ea8e1cf4a8b0800000000000000
+      internalID: -5141707666440955938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_14
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 871
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 228f2bb3647ddbe50800000000000000
+      internalID: 6826849306812807202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_15
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 839
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48e4707149b8cd450800000000000000
+      internalID: 6114915862220066436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_16
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 863
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eddaf690de8b3d10800000000000000
+      internalID: 2106434277263203810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_17
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 851
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5a8e539d245d8f20800000000000000
+      internalID: 3426487446221523549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_18
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 887
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87385009fdf820b80800000000000000
+      internalID: -8430017362127387784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_19
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 847
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aabeaf9a4a6b6de80800000000000000
+      internalID: -8154129256965018710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_20
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 903
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93aa43dfad298dfb0800000000000000
+      internalID: -4622783548247201223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_21
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 855
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4aaa1b3ea4cc3b10800000000000000
+      internalID: 1962659790221650509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_22
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 893
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3be284f829ab18a0800000000000000
+      internalID: -6333282457600464065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_23
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 850
+        width: 54
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e19824eac3dacf860800000000000000
+      internalID: 7565111950208829726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_24
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 879
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1502c02bd660aa050800000000000000
+      internalID: 5812465337283387473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_25
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 855
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e531505710e38c160800000000000000
+      internalID: 7045949793000297310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_26
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 905
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d14a449bccac3c100800000000000000
+      internalID: 127168195126928413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_27
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 872
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 850ef0b8a092e67a0800000000000000
+      internalID: -6382118496677928872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_28
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 885
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eab5ae187ec6b19b0800000000000000
+      internalID: -5108369610748830802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_29
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 851
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ff927b9edfa728b0800000000000000
+      internalID: -5176975876013514761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_30
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 854
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a933c4ec7882a21a0800000000000000
+      internalID: -6833604920834509926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_31
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 885
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afd677945bafacad0800000000000000
+      internalID: -2681054971617120774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_32
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 867
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b54154047ff98a30800000000000000
+      internalID: 4218183399762904498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_33
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 852
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b164dd71758c0a10800000000000000
+      internalID: 1877021867195523507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_34
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 871
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e96c039be9bc07b20800000000000000
+      internalID: 3130225623594747550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_35
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 891
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82e2940fa55c0c080800000000000000
+      internalID: -9169111846957273560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_36
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 850
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cf26e9f3df393f80800000000000000
+      internalID: -8126393872950087739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_37
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 860
+        width: 39
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4e3dc323a2bfd070800000000000000
+      internalID: 8133415865804471882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_38
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 888
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c62f9eb9b83778d0800000000000000
+      internalID: -2848745868870342967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_39
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 851
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1367ef1df4b3fdad0800000000000000
+      internalID: -2675354439623215567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_40
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 844
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2650fc163cbf3840800000000000000
+      internalID: 5206086634863351342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_41
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 882
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d83836acc30ec530800000000000000
+      internalID: 3877040506709489881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_42
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 850
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a8db43cd55c94590800000000000000
+      internalID: -7689397882259253086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_43
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 856
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbf17aef2983723f0800000000000000
+      internalID: -925708994412601411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_44
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 842
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9956cda32ef394590800000000000000
+      internalID: -7689544647875730023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_45
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 836
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45534f3acbba2af20800000000000000
+      internalID: 3432494692702631252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_46
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 829
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf03c19643ce0dae0800000000000000
+      internalID: -1526460563832688388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_47
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 837
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6000c22af98b956c0800000000000000
+      internalID: -4154086185512468474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_48
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 648
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c23a91fc1a02d8dc0800000000000000
+      internalID: -3635213444881734868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_49
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 608
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cd5f37e51dc84a20800000000000000
+      internalID: 3046910641873837506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_50
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 578
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e04dc9687aebd190800000000000000
+      internalID: -7936492115418332952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_51
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 543
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd4090cb19d607c0800000000000000
+      internalID: -4105355297083601479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_52
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 561
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a61ec0f4d16fda40800000000000000
+      internalID: 5395138445814142624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_53
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 560
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 914d7577cf31c1b80800000000000000
+      internalID: -8422835228034739175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_54
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 503
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 497490d7d7ac6afd0800000000000000
+      internalID: -2330953116800170092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_55
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 191
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc50c08ad9c2dcaa0800000000000000
+      internalID: -6139201661395270193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_56
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 194
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ec0daf73f6c23c0800000000000000
+      internalID: -4383006051116462540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_57
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 191
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0baf8c7ab817e4b00800000000000000
+      internalID: 814713427229997744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_58
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 187
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 675023368d4cccd20800000000000000
+      internalID: 3300229060611933558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_59
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 198
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 018b1fcbcd5c3dfa0800000000000000
+      internalID: -5777056345132779504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_60
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 189
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c94070fc0c4dd50800000000000000
+      internalID: 6761240935998463054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_61
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 197
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cab9e90946ca68200800000000000000
+      internalID: 182022382878104492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_62
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 187
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eea3ea65374684b0800000000000000
+      internalID: -5438581205251150112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_63
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 173
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eee19821f04a8a990800000000000000
+      internalID: -7374464005176746258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_64
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 183
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d62ba8725208d200800000000000000
+      internalID: 204916336280413905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_65
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 175
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a25283e44963d14f0800000000000000
+      internalID: -856468343535164118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_66
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 163
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 387fde8d6ab13f7c0800000000000000
+      internalID: -4038854037403207805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_capa3_67
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 167
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c93d2fee2853ba80800000000000000
+      internalID: -8452315117039830587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      boss_capa3_0: 3652978737160420065
+      boss_capa3_1: -4740289852913743215
+      boss_capa3_10: -9041168076496305601
+      boss_capa3_11: -1782830961162547631
+      boss_capa3_12: -7248052232108984457
+      boss_capa3_13: -5141707666440955938
+      boss_capa3_14: 6826849306812807202
+      boss_capa3_15: 6114915862220066436
+      boss_capa3_16: 2106434277263203810
+      boss_capa3_17: 3426487446221523549
+      boss_capa3_18: -8430017362127387784
+      boss_capa3_19: -8154129256965018710
+      boss_capa3_2: -7500742898703744335
+      boss_capa3_20: -4622783548247201223
+      boss_capa3_21: 1962659790221650509
+      boss_capa3_22: -6333282457600464065
+      boss_capa3_23: 7565111950208829726
+      boss_capa3_24: 5812465337283387473
+      boss_capa3_25: 7045949793000297310
+      boss_capa3_26: 127168195126928413
+      boss_capa3_27: -6382118496677928872
+      boss_capa3_28: -5108369610748830802
+      boss_capa3_29: -5176975876013514761
+      boss_capa3_3: 4348257709527180646
+      boss_capa3_30: -6833604920834509926
+      boss_capa3_31: -2681054971617120774
+      boss_capa3_32: 4218183399762904498
+      boss_capa3_33: 1877021867195523507
+      boss_capa3_34: 3130225623594747550
+      boss_capa3_35: -9169111846957273560
+      boss_capa3_36: -8126393872950087739
+      boss_capa3_37: 8133415865804471882
+      boss_capa3_38: -2848745868870342967
+      boss_capa3_39: -2675354439623215567
+      boss_capa3_4: 6963650954908322021
+      boss_capa3_40: 5206086634863351342
+      boss_capa3_41: 3877040506709489881
+      boss_capa3_42: -7689397882259253086
+      boss_capa3_43: -925708994412601411
+      boss_capa3_44: -7689544647875730023
+      boss_capa3_45: 3432494692702631252
+      boss_capa3_46: -1526460563832688388
+      boss_capa3_47: -4154086185512468474
+      boss_capa3_48: -3635213444881734868
+      boss_capa3_49: 3046910641873837506
+      boss_capa3_5: -4642612005187376407
+      boss_capa3_50: -7936492115418332952
+      boss_capa3_51: -4105355297083601479
+      boss_capa3_52: 5395138445814142624
+      boss_capa3_53: -8422835228034739175
+      boss_capa3_54: -2330953116800170092
+      boss_capa3_55: -6139201661395270193
+      boss_capa3_56: -4383006051116462540
+      boss_capa3_57: 814713427229997744
+      boss_capa3_58: 3300229060611933558
+      boss_capa3_59: -5777056345132779504
+      boss_capa3_6: 3527714029391454956
+      boss_capa3_60: 6761240935998463054
+      boss_capa3_61: 182022382878104492
+      boss_capa3_62: -5438581205251150112
+      boss_capa3_63: -7374464005176746258
+      boss_capa3_64: 204916336280413905
+      boss_capa3_65: -856468343535164118
+      boss_capa3_66: -4038854037403207805
+      boss_capa3_67: -8452315117039830587
+      boss_capa3_7: 5471176829305384773
+      boss_capa3_8: -3804159839076680398
+      boss_capa3_9: 8503370066532246059
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

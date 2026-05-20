@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: 5921fafa990434ef7b086a040ea86063
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8680983477680585559
+    second: "asteroide_B_pequen\u0303o_0"
+  - first:
+      213: -3458646883676013768
+    second: "asteroide_B_pequen\u0303o_1"
+  - first:
+      213: 6921333104527634819
+    second: "asteroide_B_pequen\u0303o_2"
+  - first:
+      213: 5295169384466725147
+    second: "asteroide_B_pequen\u0303o_3"
+  - first:
+      213: -5307257220412640446
+    second: "asteroide_B_pequen\u0303o_4"
+  - first:
+      213: -3037913770833178874
+    second: "asteroide_B_pequen\u0303o_5"
+  - first:
+      213: -7236679980732939279
+    second: "asteroide_B_pequen\u0303o_6"
+  - first:
+      213: -5187467322700881116
+    second: "asteroide_B_pequen\u0303o_7"
+  - first:
+      213: 6533794021842736573
+    second: "asteroide_B_pequen\u0303o_8"
+  - first:
+      213: -9099068229263082381
+    second: "asteroide_B_pequen\u0303o_9"
+  - first:
+      213: -8222078875369783219
+    second: "asteroide_B_pequen\u0303o_10"
+  - first:
+      213: -2655290652701131998
+    second: "asteroide_B_pequen\u0303o_11"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "asteroide_B_pequen\u0303o_0"
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 1502
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75bbf28aa7c097870800000000000000
+      internalID: 8680983477680585559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "asteroide_B_pequen\u0303o_1"
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 780
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83bbaf6ebfa6000d0800000000000000
+      internalID: -3458646883676013768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "asteroide_B_pequen\u0303o_2"
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 783
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 381758ba9c38d0060800000000000000
+      internalID: 6921333104527634819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "asteroide_B_pequen\u0303o_3"
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 733
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b19b9aa00883c7940800000000000000
+      internalID: 5295169384466725147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "asteroide_B_pequen\u0303o_4"
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 743
+        width: 14
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2437da55da5d856b0800000000000000
+      internalID: -5307257220412640446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "asteroide_B_pequen\u0303o_5"
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 751
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60f883f558927d5d0800000000000000
+      internalID: -3037913770833178874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "asteroide_B_pequen\u0303o_6"
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 724
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f38b3b26e5229b90800000000000000
+      internalID: -7236679980732939279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "asteroide_B_pequen\u0303o_7"
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 720
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 423a77254f96208b0800000000000000
+      internalID: -5187467322700881116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "asteroide_B_pequen\u0303o_8"
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 715
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db5d18b9b03bcaa50800000000000000
+      internalID: 6533794021842736573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "asteroide_B_pequen\u0303o_9"
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 678
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37c3bb787ad99b180800000000000000
+      internalID: -9099068229263082381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "asteroide_B_pequen\u0303o_10"
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 648
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d40475643de45ed80800000000000000
+      internalID: -8222078875369783219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "asteroide_B_pequen\u0303o_11"
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 421
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b755e3833862bd0800000000000000
+      internalID: -2655290652701131998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "asteroide_B_pequen\u0303o_0": 8680983477680585559
+      "asteroide_B_pequen\u0303o_1": -3458646883676013768
+      "asteroide_B_pequen\u0303o_10": -8222078875369783219
+      "asteroide_B_pequen\u0303o_11": -2655290652701131998
+      "asteroide_B_pequen\u0303o_2": 6921333104527634819
+      "asteroide_B_pequen\u0303o_3": 5295169384466725147
+      "asteroide_B_pequen\u0303o_4": -5307257220412640446
+      "asteroide_B_pequen\u0303o_5": -3037913770833178874
+      "asteroide_B_pequen\u0303o_6": -7236679980732939279
+      "asteroide_B_pequen\u0303o_7": -5187467322700881116
+      "asteroide_B_pequen\u0303o_8": 6533794021842736573
+      "asteroide_B_pequen\u0303o_9": -9099068229263082381
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
