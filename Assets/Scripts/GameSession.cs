@@ -10,6 +10,7 @@ public class GameSession : MonoBehaviour
     private static GameSession instancia;
 
     private int vidas = VidasIniciales;
+    private int puntos;
     private float tiempoPartida;
     private int asteroidesActivos;
     private int asteroidesRegistrados;
@@ -17,6 +18,8 @@ public class GameSession : MonoBehaviour
 
     private Text textoEstado;
     private Text textoMensaje;
+    private Button botonReiniciar;
+    private Button botonMenu;
 
     public static GameSession Instancia
     {
@@ -75,10 +78,31 @@ public class GameSession : MonoBehaviour
     {
         asteroidesActivos = Mathf.Max(0, asteroidesActivos - 1);
 
-        if (asteroidesRegistrados > 0 && asteroidesActivos == 0 && !cambiandoNivel && SceneManager.GetActiveScene().name == "Nivel1")
+        if (asteroidesRegistrados == 0 || asteroidesActivos > 0 || cambiandoNivel)
         {
-            StartCoroutine(PasarANivel2());
+            return;
         }
+
+        string escenaActual = SceneManager.GetActiveScene().name;
+
+        if (escenaActual == "Nivel1")
+        {
+            StartCoroutine(CambiarEscenaConMensaje("Has pasado al nivel 2", "Nivel2"));
+        }
+        else if (escenaActual == "Nivel2")
+        {
+            StartCoroutine(CambiarEscenaConMensaje("Has pasado al nivel 3", "Nivel3"));
+        }
+        else if (escenaActual == "Nivel3")
+        {
+            VictoriaFinal();
+        }
+    }
+
+    public void SumarPuntos(int cantidad)
+    {
+        puntos += Mathf.Max(0, cantidad);
+        ActualizarUI();
     }
 
     public bool PerderVida()
@@ -89,20 +113,33 @@ public class GameSession : MonoBehaviour
         if (vidas == 0)
         {
             MostrarMensaje("Game Over");
+            MostrarBotonesFinales(true);
             return false;
         }
 
         return true;
     }
 
-    private IEnumerator PasarANivel2()
+    public void ReiniciarJuego()
+    {
+        ReiniciarEstado();
+        SceneManager.LoadScene("Nivel1");
+    }
+
+    public void VolverAlMenu()
+    {
+        ReiniciarEstado();
+        SceneManager.LoadScene("Menu");
+    }
+
+    private IEnumerator CambiarEscenaConMensaje(string mensaje, string escenaDestino)
     {
         cambiandoNivel = true;
-        MostrarMensaje("Has pasado al nivel 2");
+        MostrarMensaje(mensaje);
 
         yield return new WaitForSeconds(2f);
 
-        SceneManager.LoadScene("Nivel2");
+        SceneManager.LoadScene(escenaDestino);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -112,6 +149,7 @@ public class GameSession : MonoBehaviour
         cambiandoNivel = false;
         CrearUI();
         OcultarMensaje();
+        OcultarBotonesFinales();
         ActualizarUI();
     }
 
@@ -142,6 +180,14 @@ public class GameSession : MonoBehaviour
         textoMensaje.rectTransform.offsetMin = Vector2.zero;
         textoMensaje.rectTransform.offsetMax = Vector2.zero;
         textoMensaje.gameObject.SetActive(false);
+
+        botonReiniciar = CrearBoton("BotonReiniciar", canvasObjeto.transform, new Vector2(-130f, -120f), "Reiniciar");
+        botonReiniciar.onClick.AddListener(ReiniciarJuego);
+
+        botonMenu = CrearBoton("BotonMenu", canvasObjeto.transform, new Vector2(130f, -120f), "Menu");
+        botonMenu.onClick.AddListener(VolverAlMenu);
+
+        OcultarBotonesFinales();
     }
 
     private Text CrearTexto(string nombre, Transform padre, Vector2 posicion, TextAnchor alineacion, int tamano)
@@ -166,6 +212,40 @@ public class GameSession : MonoBehaviour
         return texto;
     }
 
+    private Button CrearBoton(string nombre, Transform padre, Vector2 posicion, string etiqueta)
+    {
+        GameObject objeto = new GameObject(nombre);
+        objeto.transform.SetParent(padre, false);
+
+        Image imagen = objeto.AddComponent<Image>();
+        imagen.color = new Color(0.08f, 0.16f, 0.28f, 0.92f);
+
+        Button boton = objeto.AddComponent<Button>();
+        ColorBlock colores = boton.colors;
+        colores.normalColor = imagen.color;
+        colores.highlightedColor = new Color(0.16f, 0.32f, 0.55f, 0.95f);
+        colores.pressedColor = new Color(0.05f, 0.1f, 0.2f, 1f);
+        boton.colors = colores;
+
+        RectTransform rect = objeto.GetComponent<RectTransform>();
+        rect.anchorMin = new Vector2(0.5f, 0.5f);
+        rect.anchorMax = new Vector2(0.5f, 0.5f);
+        rect.pivot = new Vector2(0.5f, 0.5f);
+        rect.anchoredPosition = posicion;
+        rect.sizeDelta = new Vector2(220f, 64f);
+
+        Text texto = CrearTexto($"{nombre}Texto", objeto.transform, Vector2.zero, TextAnchor.MiddleCenter, 28);
+        texto.text = etiqueta;
+        texto.rectTransform.anchorMin = Vector2.zero;
+        texto.rectTransform.anchorMax = Vector2.one;
+        texto.rectTransform.pivot = new Vector2(0.5f, 0.5f);
+        texto.rectTransform.anchoredPosition = Vector2.zero;
+        texto.rectTransform.offsetMin = Vector2.zero;
+        texto.rectTransform.offsetMax = Vector2.zero;
+
+        return boton;
+    }
+
     private void ActualizarUI()
     {
         if (textoEstado == null)
@@ -175,7 +255,7 @@ public class GameSession : MonoBehaviour
 
         int minutos = Mathf.FloorToInt(tiempoPartida / 60f);
         int segundos = Mathf.FloorToInt(tiempoPartida % 60f);
-        textoEstado.text = $"Tiempo: {minutos:00}:{segundos:00}\nVidas: {vidas}";
+        textoEstado.text = $"Tiempo: {minutos:00}:{segundos:00}\nVidas: {vidas}\nPuntos: {puntos}";
     }
 
     private void MostrarMensaje(string mensaje)
@@ -187,6 +267,52 @@ public class GameSession : MonoBehaviour
 
         textoMensaje.text = mensaje;
         textoMensaje.gameObject.SetActive(true);
+    }
+
+    private void VictoriaFinal()
+    {
+        cambiandoNivel = true;
+        MostrarMensaje("Victoria final");
+        MostrarBotonesFinales(true);
+    }
+
+    private void ReiniciarEstado()
+    {
+        vidas = VidasIniciales;
+        puntos = 0;
+        tiempoPartida = 0f;
+        asteroidesActivos = 0;
+        asteroidesRegistrados = 0;
+        cambiandoNivel = false;
+        OcultarMensaje();
+        OcultarBotonesFinales();
+        ActualizarUI();
+    }
+
+    private void MostrarBotonesFinales(bool mostrarMenu)
+    {
+        if (botonReiniciar != null)
+        {
+            botonReiniciar.gameObject.SetActive(true);
+        }
+
+        if (botonMenu != null)
+        {
+            botonMenu.gameObject.SetActive(mostrarMenu);
+        }
+    }
+
+    private void OcultarBotonesFinales()
+    {
+        if (botonReiniciar != null)
+        {
+            botonReiniciar.gameObject.SetActive(false);
+        }
+
+        if (botonMenu != null)
+        {
+            botonMenu.gameObject.SetActive(false);
+        }
     }
 
     private void OcultarMensaje()

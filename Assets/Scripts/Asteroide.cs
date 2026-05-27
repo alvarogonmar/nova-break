@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class Asteroide : MonoBehaviour
 {
+    private enum TipoAsteroide
+    {
+        Normal,
+        Especial,
+        Resistente
+    }
+
     [SerializeField] private bool generarFormacion;
     [SerializeField] private int cantidad = 32;
     [SerializeField] private Vector2 areaMinima = new Vector2(-7f, 1.8f);
@@ -15,8 +22,18 @@ public class Asteroide : MonoBehaviour
     [SerializeField] private float incrementoVelocidad = 2f;
     [SerializeField] private float incrementoVelocidadEspecial = 2f;
     [SerializeField] private float escalaEspecial = 0.18f;
+    [SerializeField] private Sprite spriteResistente;
+    [SerializeField] private int cantidadResistentes;
+    [SerializeField] private int golpesResistente = 2;
+    [SerializeField] private AudioClip sonidoGolpeResistente;
+    [SerializeField] private float incrementoVelocidadResistente = 0.65f;
+    [SerializeField] private float escalaResistente = 0.15f;
+    [SerializeField] private int puntosNormal = 100;
+    [SerializeField] private int puntosEspecial = 250;
+    [SerializeField] private int puntosResistente = 400;
 
-    private bool esEspecial;
+    private TipoAsteroide tipoAsteroide = TipoAsteroide.Normal;
+    private int golpesRestantes = 1;
     private bool formacionGenerada;
     private bool registradoEnSesion;
 
@@ -39,6 +56,7 @@ public class Asteroide : MonoBehaviour
         for (int i = 0; i < cantidad; i++)
         {
             bool seraEspecial = i < cantidadEspeciales;
+            bool seraResistente = i >= cantidadEspeciales && i < cantidadEspeciales + cantidadResistentes;
             Vector2 posicion = seraEspecial ? ObtenerPosicionEspecial(i) : ObtenerPosicionAleatoria();
             Quaternion rotacion = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
             Asteroide asteroide = Instantiate(this, posicion, rotacion);
@@ -55,6 +73,12 @@ public class Asteroide : MonoBehaviour
                 asteroide.name = $"Asteroide_B_{i + 1}";
                 asteroide.ConvertirEnEspecial();
             }
+            else if (seraResistente)
+            {
+                asteroide.transform.localScale = Vector3.one * escalaResistente;
+                asteroide.name = $"Asteroide_R_{i + 1}";
+                asteroide.ConvertirEnResistente();
+            }
         }
 
         gameObject.SetActive(false);
@@ -68,21 +92,49 @@ public class Asteroide : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Orbe"))
+        if (!collision.gameObject.CompareTag("Orbe"))
         {
-            if (sonidoExplosion != null)
-            {
-                AudioSource.PlayClipAtPoint(sonidoExplosion, transform.position, volumenExplosion);
-            }
-
-            GameSession.Instancia.AsteroideDestruido();
-            Destroy(gameObject);
+            return;
         }
+
+        if (tipoAsteroide == TipoAsteroide.Resistente)
+        {
+            golpesRestantes--;
+
+            if (golpesRestantes > 0)
+            {
+                if (sonidoGolpeResistente != null)
+                {
+                    AudioSource.PlayClipAtPoint(sonidoGolpeResistente, transform.position, volumenExplosion);
+                }
+
+                return;
+            }
+        }
+
+        if (sonidoExplosion != null)
+        {
+            AudioSource.PlayClipAtPoint(sonidoExplosion, transform.position, volumenExplosion);
+        }
+
+        GameSession.Instancia.SumarPuntos(ObtenerPuntos());
+        GameSession.Instancia.AsteroideDestruido();
+        Destroy(gameObject);
     }
 
     public float ObtenerIncrementoVelocidad()
     {
-        return esEspecial ? incrementoVelocidadEspecial : incrementoVelocidad;
+        if (tipoAsteroide == TipoAsteroide.Especial)
+        {
+            return incrementoVelocidadEspecial;
+        }
+
+        if (tipoAsteroide == TipoAsteroide.Resistente)
+        {
+            return incrementoVelocidadResistente;
+        }
+
+        return incrementoVelocidad;
     }
 
     private Vector2 ObtenerPosicionAleatoria()
@@ -141,12 +193,40 @@ public class Asteroide : MonoBehaviour
             return;
         }
 
-        esEspecial = true;
+        tipoAsteroide = TipoAsteroide.Especial;
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (spriteRenderer != null)
         {
             spriteRenderer.sprite = spriteEspecial;
         }
+    }
+
+    private void ConvertirEnResistente()
+    {
+        tipoAsteroide = TipoAsteroide.Resistente;
+        golpesRestantes = Mathf.Max(1, golpesResistente);
+
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer != null && spriteResistente != null)
+        {
+            spriteRenderer.sprite = spriteResistente;
+        }
+    }
+
+    private int ObtenerPuntos()
+    {
+        if (tipoAsteroide == TipoAsteroide.Especial)
+        {
+            return puntosEspecial;
+        }
+
+        if (tipoAsteroide == TipoAsteroide.Resistente)
+        {
+            return puntosResistente;
+        }
+
+        return puntosNormal;
     }
 }

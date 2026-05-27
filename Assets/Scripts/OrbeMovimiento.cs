@@ -8,6 +8,7 @@ public class OrbeMovimiento : MonoBehaviour
     [SerializeField] private float maxAnguloRebote = 65f;
     [SerializeField] private Vector2 posicionInicio = new Vector2(0f, 1f);
     [SerializeField] private float esperaReinicio = 0.8f;
+    [SerializeField] private float minimoMovimientoVertical = 0.35f;
 
     private Rigidbody2D rb;
     private float velocidadInicial;
@@ -27,7 +28,7 @@ public class OrbeMovimiento : MonoBehaviour
     {
         if (rb.linearVelocity.sqrMagnitude > 0.01f)
         {
-            rb.linearVelocity = rb.linearVelocity.normalized * velocidad;
+            AjustarVelocidad(rb.linearVelocity);
         }
     }
 
@@ -54,7 +55,7 @@ public class OrbeMovimiento : MonoBehaviour
         float angulo = factorRebote * maxAnguloRebote;
 
         Vector2 direccion = Quaternion.Euler(0f, 0f, -angulo) * Vector2.up;
-        rb.linearVelocity = direccion.normalized * velocidad;
+        AjustarVelocidad(direccion);
     }
 
     public void ReiniciarOrbe()
@@ -70,7 +71,7 @@ public class OrbeMovimiento : MonoBehaviour
 
         if (rb.linearVelocity.sqrMagnitude > 0.01f)
         {
-            rb.linearVelocity = rb.linearVelocity.normalized * velocidad;
+            AjustarVelocidad(rb.linearVelocity);
         }
     }
 
@@ -89,7 +90,27 @@ public class OrbeMovimiento : MonoBehaviour
     {
         if (rb.linearVelocity.sqrMagnitude > 0.01f)
         {
-            rb.linearVelocity = rb.linearVelocity.normalized * velocidad;
+            AjustarVelocidad(rb.linearVelocity);
         }
+    }
+
+    private void AjustarVelocidad(Vector2 direccion)
+    {
+        if (direccion.sqrMagnitude <= 0.01f)
+        {
+            return;
+        }
+
+        direccion = direccion.normalized;
+
+        if (Mathf.Abs(direccion.y) < minimoMovimientoVertical)
+        {
+            float signoY = direccion.y >= 0f ? 1f : -1f;
+            direccion.y = signoY * minimoMovimientoVertical;
+            direccion.x = Mathf.Sign(direccion.x) * Mathf.Sqrt(1f - minimoMovimientoVertical * minimoMovimientoVertical);
+            direccion.Normalize();
+        }
+
+        rb.linearVelocity = direccion * velocidad;
     }
 }
