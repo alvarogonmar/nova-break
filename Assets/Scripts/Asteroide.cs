@@ -31,6 +31,11 @@ public class Asteroide : MonoBehaviour
     [SerializeField] private int puntosNormal = 100;
     [SerializeField] private int puntosEspecial = 250;
     [SerializeField] private int puntosResistente = 400;
+    [SerializeField] private float probabilidadPowerUp = 0.12f;
+    [SerializeField] private float probabilidadExplosion = 0.4f;
+    [SerializeField] private Sprite spritePowerUpNaveGrande;
+    [SerializeField] private Sprite spritePowerUpExplosion;
+    [SerializeField] private AudioClip sonidoPowerUp;
 
     private TipoAsteroide tipoAsteroide = TipoAsteroide.Normal;
     private int golpesRestantes = 1;
@@ -112,14 +117,12 @@ public class Asteroide : MonoBehaviour
             }
         }
 
-        if (sonidoExplosion != null)
-        {
-            AudioSource.PlayClipAtPoint(sonidoExplosion, transform.position, volumenExplosion);
-        }
+        DestruirAsteroide(true);
+    }
 
-        GameSession.Instancia.SumarPuntos(ObtenerPuntos());
-        GameSession.Instancia.AsteroideDestruido();
-        Destroy(gameObject);
+    public void DestruirPorPowerUp()
+    {
+        DestruirAsteroide(false);
     }
 
     public float ObtenerIncrementoVelocidad()
@@ -228,5 +231,36 @@ public class Asteroide : MonoBehaviour
         }
 
         return puntosNormal;
+    }
+
+    private void DestruirAsteroide(bool puedeSoltarPowerUp)
+    {
+        if (sonidoExplosion != null)
+        {
+            AudioSource.PlayClipAtPoint(sonidoExplosion, transform.position, volumenExplosion);
+        }
+
+        if (puedeSoltarPowerUp)
+        {
+            IntentarCrearPowerUp();
+        }
+
+        GameSession.Instancia.SumarPuntos(ObtenerPuntos());
+        GameSession.Instancia.AsteroideDestruido();
+        Destroy(gameObject);
+    }
+
+    private void IntentarCrearPowerUp()
+    {
+        if (Random.value > probabilidadPowerUp)
+        {
+            return;
+        }
+
+        bool seraExplosion = Random.value < probabilidadExplosion;
+        PowerUp.TipoPowerUp tipo = seraExplosion ? PowerUp.TipoPowerUp.Explosion : PowerUp.TipoPowerUp.NaveGrande;
+        Sprite sprite = seraExplosion ? spritePowerUpExplosion : spritePowerUpNaveGrande;
+
+        PowerUp.Crear(tipo, transform.position, sprite, sonidoPowerUp);
     }
 }

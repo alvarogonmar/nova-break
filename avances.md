@@ -406,6 +406,8 @@ SceneManager.LoadScene("NombreEscena");
 - `Assets/Scripts/Asteroide.cs`
 - `Assets/Scripts/ZonaMuerte.cs`
 - `Assets/Scripts/GameSession.cs`
+- `Assets/Scripts/FondoGalaxia.cs`
+- `Assets/Scripts/PowerUp.cs`
 
 ### Escenas
 
@@ -418,7 +420,177 @@ SceneManager.LoadScene("NombreEscena");
 
 - `ProjectSettings/EditorBuildSettings.asset`
 
-## 13. Bugs importantes y soluciones
+## 12. Nivel 3 y mejoras generales
+
+### Que se hizo
+
+Se agrego `Nivel3` como continuacion de la dificultad del juego. Este nivel usa fondo morado, mas asteroides y nuevos tipos de obstaculos.
+
+Cambios principales:
+
+- `Nivel3` se agrego al Build Settings.
+- El cambio de nivel ahora puede avanzar de `Nivel1` a `Nivel2` y de `Nivel2` a `Nivel3`.
+- Al terminar `Nivel3`, se muestra una victoria final.
+- Se agrego musica diferente para `Nivel3`.
+- Se agregaron asteroides resistentes que necesitan mas de un golpe.
+
+### Asteroides resistentes
+
+Los asteroides resistentes usan el mismo script `Asteroide.cs`, pero cambian su tipo interno a `Resistente`.
+
+La idea principal es:
+
+```csharp
+if (tipoAsteroide == TipoAsteroide.Resistente)
+{
+    golpesRestantes--;
+
+    if (golpesRestantes > 0)
+    {
+        return;
+    }
+}
+```
+
+Esto significa que el asteroide no se destruye en el primer golpe. Primero baja su contador de golpes y solo desaparece cuando ya no le quedan golpes.
+
+### Sistema de puntos
+
+Se agrego un contador de puntos al `GameSession`. Cada asteroide da puntos cuando se destruye:
+
+- Asteroide normal: `100` puntos.
+- Asteroide especial: `250` puntos.
+- Asteroide resistente: `400` puntos.
+
+El metodo principal es:
+
+```csharp
+public void SumarPuntos(int cantidad)
+{
+    puntos += Mathf.Max(0, cantidad);
+    ActualizarUI();
+}
+```
+
+### Dash de la nave
+
+Se agrego un dash simple para ayudar al jugador cuando esta lejos de la orbe.
+
+Controles:
+
+- `Shift izquierdo`
+- `Espacio`
+
+El dash solo funciona si el jugador se esta moviendo a la izquierda o derecha. Esto evita que se gaste cuando la nave esta quieta.
+
+La funcion principal es:
+
+```csharp
+private void AplicarDash()
+{
+    if (Mathf.Approximately(movimiento, 0f))
+    {
+        return;
+    }
+
+    inicioDash = rb != null ? rb.position : (Vector2)transform.position;
+    destinoDash = inicioDash;
+    destinoDash.x += Mathf.Sign(movimiento) * distanciaDash;
+    destinoDash.x = Mathf.Clamp(destinoDash.x, -limiteX, limiteX);
+}
+```
+
+Tambien se agrego una estela visual con `TrailRenderer` para que no parezca que la nave se teletransporta.
+
+### Fondo con particulas
+
+Se agrego `FondoGalaxia.cs` para que los niveles tengan particulas de estrellas. La idea es dar la sensacion de que el jugador se esta adentrando en una galaxia.
+
+Cada nivel conserva su color principal:
+
+- `Nivel1`: azul.
+- `Nivel2`: rojo.
+- `Nivel3`: morado.
+
+La velocidad aumenta por nivel para reforzar la sensacion de dificultad.
+
+### Sonido y dano al perder vida
+
+Cuando la orbe cae en la zona de muerte:
+
+- Se reproduce un sonido de perdida.
+- Se resta una vida.
+- La nave se recentra.
+- Aparece un flash rojo en pantalla como efecto de dano.
+
+Esto esta en `ZonaMuerte.cs`.
+
+## 13. Power-ups
+
+### Que se hizo
+
+Se agregaron power-ups que pueden caer cuando se destruye un asteroide. No salen siempre, porque si salieran demasiado seguido el juego perderia dificultad.
+
+La probabilidad configurada es:
+
+```csharp
+[SerializeField] private float probabilidadPowerUp = 0.12f;
+```
+
+Esto quiere decir que hay aproximadamente 12% de probabilidad de que salga un power-up al destruir un asteroide.
+
+### Power-up de nave grande
+
+Este power-up agranda temporalmente la nave.
+
+Sirve para que sea mas facil golpear la orbe cuando el jugador esta en una situacion dificil.
+
+La funcion que se ejecuta en la nave es:
+
+```csharp
+public void ActivarNaveGrande(float duracion, float multiplicador)
+{
+    if (rutinaNaveGrande != null)
+    {
+        StopCoroutine(rutinaNaveGrande);
+    }
+
+    rutinaNaveGrande = StartCoroutine(NaveGrandeTemporal(duracion, multiplicador));
+}
+```
+
+La nave vuelve a su tamano original despues de unos segundos.
+
+### Power-up de explosion
+
+Este power-up destruye asteroides cercanos a la orbe. Se hizo asi porque los asteroides normalmente estan cerca de la pelota, no cerca de la nave.
+
+La parte importante es:
+
+```csharp
+GameObject orbe = GameObject.FindGameObjectWithTag("Orbe");
+
+if (orbe != null)
+{
+    centroExplosion = orbe.transform.position;
+}
+```
+
+Despues usa `Physics2D.OverlapCircleAll` para encontrar asteroides cercanos y destruirlos.
+
+### Bug que salio
+
+Al principio parecia que los power-ups no hacian nada.
+
+### Por que pasaba
+
+El power-up de explosion explotaba alrededor de la nave. Como la nave esta abajo y los asteroides estan arriba, casi nunca habia asteroides dentro del radio.
+
+### Como se corrigio
+
+Se cambio la explosion para que tome como centro la posicion de la orbe. Tambien se aumento el radio de explosion y se hizo mas evidente el efecto de nave grande.
+
+## 14. Bugs importantes y soluciones
 
 | Problema                                 | Causa                                                                            | Solucion                                                                   |
 | ---------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
@@ -434,8 +606,11 @@ SceneManager.LoadScene("NombreEscena");
 | Al perder vida la orbe seguia rapida     | No se reiniciaba la velocidad base                                               | Se guardo velocidad inicial y se restauro al reiniciar                     |
 | Nivel1 pasaba inmediatamente a Nivel2    | El contador de asteroides estaba en 0 antes de registrarlos                      | Se agrego `asteroidesRegistrados` y registro inmediato                     |
 | Al llegar a 0 vidas seguia reiniciando   | La zona de muerte siempre reiniciaba la orbe                                     | `PerderVida()` ahora avisa si quedan vidas                                 |
+| La orbe se quedaba horizontal            | La velocidad vertical podia quedar demasiado baja                                | Se agrego un minimo vertical en `OrbeMovimiento.cs`                        |
+| El dash se gastaba parado                | El dash no revisaba si habia direccion                                           | Se agrego validacion de movimiento antes de usarlo                         |
+| Los power-ups parecian no funcionar      | La explosion ocurria abajo, lejos de los asteroides                              | La explosion ahora se centra cerca de la orbe                              |
 
-## 14. Estado actual
+## 15. Estado actual
 
 Actualmente el juego tiene:
 
@@ -448,19 +623,26 @@ Actualmente el juego tiene:
 - Sistema de tiempo.
 - Asteroides normales.
 - Asteroides especiales en Nivel2.
+- Asteroides resistentes en Nivel3.
 - Sonido de explosion al destruir asteroides.
 - Cambio automatico de `Nivel1` a `Nivel2`.
+- Cambio automatico de `Nivel2` a `Nivel3`.
+- Victoria final al completar `Nivel3`.
 - Conservacion de vidas y tiempo entre escenas.
+- Sistema de puntos.
+- Dash con recarga.
+- Fondo con particulas de galaxia.
+- Efecto de dano al perder vida.
+- Power-up de nave grande.
+- Power-up de explosion.
 
-## 15. Pendientes posibles
+## 16. Pendientes posibles
 
 Cosas que podrian agregarse despues:
 
-- Pantalla formal de Game Over.
-- Reiniciar partida desde Game Over.
-- Pasar de `Nivel2` a `Nivel3`.
-- Sistema de puntaje.
-- Mas sonidos para rebote, perder vida y pasar nivel.
+- Balancear la probabilidad de power-ups.
+- Agregar iconos o texto temporal para explicar que power-up se recogio.
+- Agregar mas sonidos para rebote y pasar nivel.
 - Mejorar el diseno visual del contador de tiempo y vidas.
 - Pausa del juego.
-- Menu de victoria final.
+- Nivel infinito con dificultad progresiva.

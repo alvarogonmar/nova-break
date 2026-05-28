@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -18,6 +19,8 @@ public class NaveMovimiento : MonoBehaviour
     private float tiempoDash;
     private Vector2 inicioDash;
     private Vector2 destinoDash;
+    private Vector3 escalaOriginal;
+    private Coroutine rutinaNaveGrande;
 
     private void Awake()
     {
@@ -26,6 +29,7 @@ public class NaveMovimiento : MonoBehaviour
 
     private void Start()
     {
+        escalaOriginal = transform.localScale;
         CrearEstelaDash();
         CrearIndicadorDash();
     }
@@ -244,5 +248,23 @@ public class NaveMovimiento : MonoBehaviour
         {
             transform.position = posicion;
         }
+    }
+
+    public void ActivarNaveGrande(float duracion, float multiplicador)
+    {
+        if (rutinaNaveGrande != null)
+        {
+            StopCoroutine(rutinaNaveGrande);
+        }
+
+        rutinaNaveGrande = StartCoroutine(NaveGrandeTemporal(duracion, multiplicador));
+    }
+
+    private IEnumerator NaveGrandeTemporal(float duracion, float multiplicador)
+    {
+        transform.localScale = new Vector3(escalaOriginal.x * multiplicador, escalaOriginal.y, escalaOriginal.z);
+        yield return new WaitForSeconds(duracion);
+        transform.localScale = escalaOriginal;
+        rutinaNaveGrande = null;
     }
 }

@@ -514,6 +514,14 @@ MonoBehaviour:
   sonidoGolpeResistente: {fileID: 8300000, guid: b12e7eb42716b4a2198428801e2cbf9a, type: 3}
   incrementoVelocidadResistente: 0.65
   escalaResistente: 0.15
+  puntosNormal: 100
+  puntosEspecial: 250
+  puntosResistente: 400
+  probabilidadPowerUp: 0.12
+  probabilidadExplosion: 0.4
+  spritePowerUpNaveGrande: {fileID: 4408241822026484976, guid: 775b0e66badc64f11a94f31cdb3a4465, type: 3}
+  spritePowerUpExplosion: {fileID: 5590203007942418338, guid: 416ec18bd5a40449c9384defb07aa9e0, type: 3}
+  sonidoPowerUp: {fileID: 8300000, guid: d94a0e97ece96418291ca4ecf1163173, type: 3}
 --- !u!61 &1250152510
 BoxCollider2D:
   m_ObjectHideFlags: 0
