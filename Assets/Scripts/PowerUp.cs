@@ -75,6 +75,8 @@ public class PowerUp : MonoBehaviour
 
         if (tipo == TipoPowerUp.NaveGrande)
         {
+            GameSession.Instancia.MostrarAvisoTemporal("Power-up: nave grande");
+
             if (nave != null)
             {
                 nave.ActivarNaveGrande(duracionNaveGrande, escalaNaveGrande);
@@ -82,6 +84,7 @@ public class PowerUp : MonoBehaviour
         }
         else
         {
+            GameSession.Instancia.MostrarAvisoTemporal("Power-up: explosion");
             ExplotarAsteroidesCercanos();
         }
 
@@ -97,6 +100,8 @@ public class PowerUp : MonoBehaviour
         {
             centroExplosion = orbe.transform.position;
         }
+
+        GameSession.Instancia.MostrarExplosionVisual(centroExplosion, radioExplosion);
 
         Collider2D[] cercanos = Physics2D.OverlapCircleAll(centroExplosion, radioExplosion);
 

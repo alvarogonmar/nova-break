@@ -36,11 +36,21 @@ public class Asteroide : MonoBehaviour
     [SerializeField] private Sprite spritePowerUpNaveGrande;
     [SerializeField] private Sprite spritePowerUpExplosion;
     [SerializeField] private AudioClip sonidoPowerUp;
+    [SerializeField] private bool animacionSuave = true;
+    [SerializeField] private Vector2 velocidadRotacion = new Vector2(-18f, 18f);
+    [SerializeField] private float intensidadPulso = 0.035f;
+    [SerializeField] private float velocidadPulso = 1.8f;
+    [SerializeField] private bool ajustarHitboxAlSprite = true;
+    [SerializeField] private float margenHitbox = 0.92f;
 
     private TipoAsteroide tipoAsteroide = TipoAsteroide.Normal;
     private int golpesRestantes = 1;
     private bool formacionGenerada;
     private bool registradoEnSesion;
+    private Vector3 escalaBase;
+    private float rotacionActual;
+    private float velocidadRotacionActual;
+    private float fasePulso;
 
     private void Start()
     {
@@ -70,7 +80,6 @@ public class Asteroide : MonoBehaviour
             asteroide.transform.localScale = new Vector3(escala, escala, 1f);
             asteroide.generarFormacion = false;
             asteroide.name = $"Asteroide_{i + 1}";
-            asteroide.RegistrarEnSesion();
 
             if (seraEspecial)
             {
@@ -84,15 +93,40 @@ public class Asteroide : MonoBehaviour
                 asteroide.name = $"Asteroide_R_{i + 1}";
                 asteroide.ConvertirEnResistente();
             }
+
+            asteroide.PrepararAsteroideInstanciado();
         }
 
         gameObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (!animacionSuave || generarFormacion || escalaBase == Vector3.zero)
+        {
+            return;
+        }
+
+        rotacionActual += velocidadRotacionActual * Time.deltaTime;
+        float pulso = 1f + Mathf.Sin(Time.time * velocidadPulso + fasePulso) * intensidadPulso;
+        transform.localRotation = Quaternion.Euler(0f, 0f, rotacionActual);
+        transform.localScale = escalaBase * pulso;
     }
 
     private void RegistrarEnSesion()
     {
         registradoEnSesion = true;
         GameSession.Instancia.RegistrarAsteroide();
+    }
+
+    private void PrepararAsteroideInstanciado()
+    {
+        escalaBase = transform.localScale;
+        rotacionActual = transform.eulerAngles.z;
+        velocidadRotacionActual = Random.Range(velocidadRotacion.x, velocidadRotacion.y);
+        fasePulso = Random.Range(0f, Mathf.PI * 2f);
+        AjustarHitboxAlSprite();
+        RegistrarEnSesion();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -202,6 +236,7 @@ public class Asteroide : MonoBehaviour
         if (spriteRenderer != null)
         {
             spriteRenderer.sprite = spriteEspecial;
+            AjustarHitboxAlSprite();
         }
     }
 
@@ -215,6 +250,7 @@ public class Asteroide : MonoBehaviour
         if (spriteRenderer != null && spriteResistente != null)
         {
             spriteRenderer.sprite = spriteResistente;
+            AjustarHitboxAlSprite();
         }
     }
 
@@ -262,5 +298,39 @@ public class Asteroide : MonoBehaviour
         Sprite sprite = seraExplosion ? spritePowerUpExplosion : spritePowerUpNaveGrande;
 
         PowerUp.Crear(tipo, transform.position, sprite, sonidoPowerUp);
+    }
+
+    private void AjustarHitboxAlSprite()
+    {
+        if (!ajustarHitboxAlSprite)
+        {
+            return;
+        }
+
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer == null || spriteRenderer.sprite == null)
+        {
+            return;
+        }
+
+        CircleCollider2D circleCollider = GetComponent<CircleCollider2D>();
+
+        if (circleCollider != null)
+        {
+            Bounds bounds = spriteRenderer.sprite.bounds;
+            circleCollider.offset = bounds.center;
+            circleCollider.radius = Mathf.Max(bounds.extents.x, bounds.extents.y) * margenHitbox;
+            return;
+        }
+
+        BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+
+        if (boxCollider != null)
+        {
+            Bounds bounds = spriteRenderer.sprite.bounds;
+            boxCollider.offset = bounds.center;
+            boxCollider.size = bounds.size * margenHitbox;
+        }
     }
 }

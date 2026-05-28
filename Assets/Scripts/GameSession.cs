@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,8 +19,12 @@ public class GameSession : MonoBehaviour
 
     private Text textoEstado;
     private Text textoMensaje;
+    private Text textoAviso;
     private Button botonReiniciar;
     private Button botonMenu;
+    private readonly List<Image> iconosVida = new List<Image>();
+    private Sprite spriteVida;
+    private Coroutine rutinaAviso;
 
     public static GameSession Instancia
     {
@@ -112,7 +117,7 @@ public class GameSession : MonoBehaviour
 
         if (vidas == 0)
         {
-            MostrarMensaje("Game Over");
+            MostrarMensaje(CrearResumenFinal("Game Over"));
             MostrarBotonesFinales(true);
             return false;
         }
@@ -174,6 +179,10 @@ public class GameSession : MonoBehaviour
         canvasObjeto.AddComponent<GraphicRaycaster>();
 
         textoEstado = CrearTexto("Estado", canvasObjeto.transform, new Vector2(20f, -20f), TextAnchor.UpperLeft, 34);
+        textoEstado.rectTransform.sizeDelta = new Vector2(520f, 90f);
+
+        CrearIconosVidas(canvasObjeto.transform);
+
         textoMensaje = CrearTexto("Mensaje", canvasObjeto.transform, Vector2.zero, TextAnchor.MiddleCenter, 54);
         textoMensaje.rectTransform.anchorMin = new Vector2(0f, 0f);
         textoMensaje.rectTransform.anchorMax = new Vector2(1f, 1f);
@@ -181,10 +190,18 @@ public class GameSession : MonoBehaviour
         textoMensaje.rectTransform.offsetMax = Vector2.zero;
         textoMensaje.gameObject.SetActive(false);
 
+        textoAviso = CrearTexto("Aviso", canvasObjeto.transform, Vector2.zero, TextAnchor.MiddleCenter, 42);
+        textoAviso.rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+        textoAviso.rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        textoAviso.rectTransform.pivot = new Vector2(0.5f, 0.5f);
+        textoAviso.rectTransform.anchoredPosition = new Vector2(0f, 170f);
+        textoAviso.rectTransform.sizeDelta = new Vector2(680f, 80f);
+        textoAviso.gameObject.SetActive(false);
+
         botonReiniciar = CrearBoton("BotonReiniciar", canvasObjeto.transform, new Vector2(-130f, -120f), "Reiniciar");
         botonReiniciar.onClick.AddListener(ReiniciarJuego);
 
-        botonMenu = CrearBoton("BotonMenu", canvasObjeto.transform, new Vector2(130f, -120f), "Menu");
+        botonMenu = CrearBoton("BotonMenu", canvasObjeto.transform, new Vector2(130f, -120f), "Menu principal");
         botonMenu.onClick.AddListener(VolverAlMenu);
 
         OcultarBotonesFinales();
@@ -246,6 +263,63 @@ public class GameSession : MonoBehaviour
         return boton;
     }
 
+    private void CrearIconosVidas(Transform padre)
+    {
+        GameObject contenedor = new GameObject("VidasIconos");
+        contenedor.transform.SetParent(padre, false);
+
+        RectTransform rectContenedor = contenedor.AddComponent<RectTransform>();
+        rectContenedor.anchorMin = new Vector2(0f, 1f);
+        rectContenedor.anchorMax = new Vector2(0f, 1f);
+        rectContenedor.pivot = new Vector2(0f, 1f);
+        rectContenedor.anchoredPosition = new Vector2(20f, -112f);
+        rectContenedor.sizeDelta = new Vector2(320f, 50f);
+
+        spriteVida = CrearSpriteVida();
+        iconosVida.Clear();
+
+        for (int i = 0; i < VidasIniciales; i++)
+        {
+            GameObject iconoObjeto = new GameObject($"Vida_{i + 1}");
+            iconoObjeto.transform.SetParent(contenedor.transform, false);
+
+            Image imagen = iconoObjeto.AddComponent<Image>();
+            imagen.sprite = spriteVida;
+            imagen.color = new Color(0.25f, 1f, 1f, 1f);
+            imagen.raycastTarget = false;
+
+            RectTransform rect = imagen.rectTransform;
+            rect.anchorMin = new Vector2(0f, 0.5f);
+            rect.anchorMax = new Vector2(0f, 0.5f);
+            rect.pivot = new Vector2(0f, 0.5f);
+            rect.anchoredPosition = new Vector2(i * 42f, 0f);
+            rect.sizeDelta = new Vector2(34f, 34f);
+
+            iconosVida.Add(imagen);
+        }
+    }
+
+    private Sprite CrearSpriteVida()
+    {
+        const int tamano = 32;
+        Texture2D textura = new Texture2D(tamano, tamano, TextureFormat.RGBA32, false);
+        textura.filterMode = FilterMode.Point;
+
+        for (int y = 0; y < tamano; y++)
+        {
+            for (int x = 0; x < tamano; x++)
+            {
+                float nx = (x - tamano * 0.5f) / (tamano * 0.5f);
+                float ny = (y - tamano * 0.42f) / (tamano * 0.5f);
+                float valor = Mathf.Pow(nx * nx + ny * ny - 0.32f, 3f) - nx * nx * ny * ny * ny;
+                textura.SetPixel(x, y, valor <= 0f ? Color.white : Color.clear);
+            }
+        }
+
+        textura.Apply();
+        return Sprite.Create(textura, new Rect(0f, 0f, tamano, tamano), new Vector2(0.5f, 0.5f), tamano);
+    }
+
     private void ActualizarUI()
     {
         if (textoEstado == null)
@@ -255,7 +329,92 @@ public class GameSession : MonoBehaviour
 
         int minutos = Mathf.FloorToInt(tiempoPartida / 60f);
         int segundos = Mathf.FloorToInt(tiempoPartida % 60f);
-        textoEstado.text = $"Tiempo: {minutos:00}:{segundos:00}\nVidas: {vidas}\nPuntos: {puntos}";
+        textoEstado.text = $"Tiempo: {minutos:00}:{segundos:00}\nPuntos: {puntos}";
+        ActualizarIconosVidas();
+    }
+
+    private void ActualizarIconosVidas()
+    {
+        for (int i = 0; i < iconosVida.Count; i++)
+        {
+            iconosVida[i].enabled = i < vidas;
+        }
+    }
+
+    public void MostrarAvisoTemporal(string mensaje)
+    {
+        if (textoAviso == null)
+        {
+            return;
+        }
+
+        if (rutinaAviso != null)
+        {
+            StopCoroutine(rutinaAviso);
+        }
+
+        rutinaAviso = StartCoroutine(MostrarAvisoCoroutine(mensaje));
+    }
+
+    private IEnumerator MostrarAvisoCoroutine(string mensaje)
+    {
+        textoAviso.text = mensaje;
+        textoAviso.color = new Color(0.55f, 1f, 0.9f, 1f);
+        textoAviso.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(1.2f);
+
+        textoAviso.gameObject.SetActive(false);
+        rutinaAviso = null;
+    }
+
+    public void MostrarExplosionVisual(Vector3 posicion, float radio)
+    {
+        StartCoroutine(MostrarExplosionVisualCoroutine(posicion, radio));
+    }
+
+    private IEnumerator MostrarExplosionVisualCoroutine(Vector3 posicion, float radio)
+    {
+        GameObject objeto = new GameObject("ExplosionPowerUpVisual");
+        LineRenderer linea = objeto.AddComponent<LineRenderer>();
+        linea.useWorldSpace = false;
+        linea.loop = true;
+        linea.positionCount = 72;
+        linea.startWidth = 0.08f;
+        linea.endWidth = 0.08f;
+        linea.sortingOrder = 45;
+
+        Shader shader = Shader.Find("Sprites/Default");
+
+        if (shader != null)
+        {
+            linea.material = new Material(shader);
+        }
+
+        objeto.transform.position = posicion;
+
+        for (int i = 0; i < linea.positionCount; i++)
+        {
+            float angulo = i / (float)linea.positionCount * Mathf.PI * 2f;
+            Vector3 punto = new Vector3(Mathf.Cos(angulo) * radio, Mathf.Sin(angulo) * radio, 0f);
+            linea.SetPosition(i, punto);
+        }
+
+        float duracion = 0.35f;
+        float tiempo = 0f;
+
+        while (tiempo < duracion)
+        {
+            tiempo += Time.deltaTime;
+            float progreso = tiempo / duracion;
+            Color color = new Color(1f, 0.75f, 0.15f, 1f - progreso);
+            linea.startColor = color;
+            linea.endColor = color;
+            objeto.transform.localScale = Vector3.one * Mathf.Lerp(0.65f, 1.15f, progreso);
+            yield return null;
+        }
+
+        Destroy(objeto);
     }
 
     private void MostrarMensaje(string mensaje)
@@ -272,8 +431,15 @@ public class GameSession : MonoBehaviour
     private void VictoriaFinal()
     {
         cambiandoNivel = true;
-        MostrarMensaje("Victoria final");
+        MostrarMensaje(CrearResumenFinal("Victoria final"));
         MostrarBotonesFinales(true);
+    }
+
+    private string CrearResumenFinal(string titulo)
+    {
+        int minutos = Mathf.FloorToInt(tiempoPartida / 60f);
+        int segundos = Mathf.FloorToInt(tiempoPartida % 60f);
+        return $"{titulo}\nPuntos: {puntos}\nTiempo: {minutos:00}:{segundos:00}";
     }
 
     private void ReiniciarEstado()

@@ -1112,6 +1112,11 @@ MonoBehaviour:
   maxAnguloRebote: 65
   posicionInicio: {x: 0, y: 1}
   esperaReinicio: 0.8
+  minimoMovimientoVertical: 0.35
+  sonidoRebote: {fileID: 8300000, guid: b12e7eb42716b4a2198428801e2cbf9a, type: 3}
+  volumenRebote: 0.45
+  ajustarHitboxAutomaticamente: 1
+  margenHitbox: 0.92
 --- !u!1 &2219304710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,6 +1614,12 @@ MonoBehaviour:
   spritePowerUpNaveGrande: {fileID: 4408241822026484976, guid: 775b0e66badc64f11a94f31cdb3a4465, type: 3}
   spritePowerUpExplosion: {fileID: 5590203007942418338, guid: 416ec18bd5a40449c9384defb07aa9e0, type: 3}
   sonidoPowerUp: {fileID: 8300000, guid: d94a0e97ece96418291ca4ecf1163173, type: 3}
+  animacionSuave: 1
+  velocidadRotacion: {x: -18, y: 18}
+  intensidadPulso: 0.03
+  velocidadPulso: 1.75
+  ajustarHitboxAlSprite: 1
+  margenHitbox: 0.92
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

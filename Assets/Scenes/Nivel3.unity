@@ -507,13 +507,13 @@ MonoBehaviour:
   cantidadEspeciales: 6
   incrementoVelocidad: 0.45
   incrementoVelocidadEspecial: 1.25
-  escalaEspecial: 0.16
+  escalaEspecial: 0.19
   spriteResistente: {fileID: -244379757946067572, guid: cffcb79bed0a74fe2ac0ddb5bcc88acf, type: 3}
   cantidadResistentes: 10
   golpesResistente: 2
   sonidoGolpeResistente: {fileID: 8300000, guid: b12e7eb42716b4a2198428801e2cbf9a, type: 3}
   incrementoVelocidadResistente: 0.65
-  escalaResistente: 0.15
+  escalaResistente: 0.18
   puntosNormal: 100
   puntosEspecial: 250
   puntosResistente: 400
@@ -522,6 +522,12 @@ MonoBehaviour:
   spritePowerUpNaveGrande: {fileID: 4408241822026484976, guid: 775b0e66badc64f11a94f31cdb3a4465, type: 3}
   spritePowerUpExplosion: {fileID: 5590203007942418338, guid: 416ec18bd5a40449c9384defb07aa9e0, type: 3}
   sonidoPowerUp: {fileID: 8300000, guid: d94a0e97ece96418291ca4ecf1163173, type: 3}
+  animacionSuave: 1
+  velocidadRotacion: {x: -22, y: 22}
+  intensidadPulso: 0.034
+  velocidadPulso: 2
+  ajustarHitboxAlSprite: 1
+  margenHitbox: 0.92
 --- !u!61 &1250152510
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -928,6 +934,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 11
   limiteX: 8
+  distanciaDash: 3
+  recargaDash: 3
+  duracionDash: 0.12
 --- !u!61 &3119304688
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1106,7 +1115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FondoGalaxia
   tasaEmision: 45
-  velocidadEstrellas: 5.2
+  velocidadEstrellas: 6
   tiempoVida: 5
   radioOrigen: 0.18
   tamanoEstrella: {x: 0.025, y: 0.055}
@@ -1290,6 +1299,11 @@ MonoBehaviour:
   maxAnguloRebote: 65
   posicionInicio: {x: 0, y: 1}
   esperaReinicio: 0.8
+  minimoMovimientoVertical: 0.35
+  sonidoRebote: {fileID: 8300000, guid: b12e7eb42716b4a2198428801e2cbf9a, type: 3}
+  volumenRebote: 0.45
+  ajustarHitboxAutomaticamente: 1
+  margenHitbox: 0.92
 --- !u!1 &3219304710
 GameObject:
   m_ObjectHideFlags: 0

@@ -646,3 +646,76 @@ Cosas que podrian agregarse despues:
 - Mejorar el diseno visual del contador de tiempo y vidas.
 - Pausa del juego.
 - Nivel infinito con dificultad progresiva.
+
+## 17. Pulido visual y mejoras recientes
+
+### Que se hizo
+
+Se agregaron mejoras de presentacion y jugabilidad para que el juego se sienta mas completo:
+
+- Game Over y Victoria muestran puntos y tiempo final.
+- Las vidas ahora se ven con iconos en lugar de solo un numero.
+- El dash tiene una barra de recarga visual.
+- Los power-ups muestran texto temporal en el centro cuando se recogen.
+- El power-up de explosion muestra un aro visual donde ocurre la explosion.
+- La orbe reproduce sonido de rebote.
+- La hitbox de la orbe se ajusta al sprite para que no rebote antes de tocar el borde.
+- Los asteroides tienen rotacion y pulso suave para que no se vean estaticos.
+- Los asteroides especiales y resistentes se ajustaron de tamano y hitbox.
+
+### Dash con barra
+
+El indicador de dash sigue mostrando texto, pero ahora tambien tiene una barra que se llena mientras se recarga.
+
+La idea es que el jugador pueda saber visualmente cuando el dash vuelve a estar listo.
+
+### Vidas con iconos
+
+Antes se mostraba:
+
+```text
+Vidas: 5
+```
+
+Ahora se dibujan iconos en la esquina superior izquierda. Esto hace que la interfaz se vea mas parecida a un videojuego.
+
+### Hitbox de la orbe
+
+La orbe rebotaba antes de tocar visualmente el borde porque su `CircleCollider2D` era mas grande que el sprite.
+
+Se agrego un ajuste automatico:
+
+```csharp
+collider.radius = Mathf.Min(bounds.extents.x, bounds.extents.y) * margenHitbox;
+```
+
+Esto hace que el collider coincida mejor con la imagen visible.
+
+### Animacion de asteroides
+
+Los asteroides ahora rotan lentamente y tienen un pulso muy pequeno de escala. No se mueven de lugar para evitar que la dificultad cambie de forma injusta.
+
+La animacion usa:
+
+```csharp
+transform.localRotation = Quaternion.Euler(0f, 0f, rotacionActual);
+transform.localScale = escalaBase * pulso;
+```
+
+### Power-ups mas claros
+
+Cuando se recoge un power-up aparece texto temporal:
+
+- `Power-up: nave grande`
+- `Power-up: explosion`
+
+Ademas, la nave grande tiene una animacion de brillo y crecimiento, y la explosion muestra un aro visual.
+
+### Backup recomendado
+
+Antes de empezar cambios grandes, como un nivel infinito, se recomienda guardar una version estable en GitHub con:
+
+- Una rama de backup.
+- Un tag estable.
+
+Asi se puede volver a esta version si los cambios nuevos no convencen.

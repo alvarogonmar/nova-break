@@ -21,10 +21,19 @@ public class NaveMovimiento : MonoBehaviour
     private Vector2 destinoDash;
     private Vector3 escalaOriginal;
     private Coroutine rutinaNaveGrande;
+    private Image barraDash;
+    private SpriteRenderer spriteRenderer;
+    private Color colorOriginal = Color.white;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer != null)
+        {
+            colorOriginal = spriteRenderer.color;
+        }
     }
 
     private void Start()
@@ -210,6 +219,36 @@ public class NaveMovimiento : MonoBehaviour
         rect.anchoredPosition = new Vector2(-20f, -20f);
         rect.sizeDelta = new Vector2(360f, 70f);
 
+        GameObject fondoBarraObjeto = new GameObject("FondoBarraDash");
+        fondoBarraObjeto.transform.SetParent(canvasObjeto.transform, false);
+
+        Image fondoBarra = fondoBarraObjeto.AddComponent<Image>();
+        fondoBarra.color = new Color(0f, 0f, 0f, 0.45f);
+        fondoBarra.raycastTarget = false;
+
+        RectTransform rectFondo = fondoBarra.rectTransform;
+        rectFondo.anchorMin = new Vector2(1f, 1f);
+        rectFondo.anchorMax = new Vector2(1f, 1f);
+        rectFondo.pivot = new Vector2(1f, 1f);
+        rectFondo.anchoredPosition = new Vector2(-24f, -72f);
+        rectFondo.sizeDelta = new Vector2(260f, 16f);
+
+        GameObject barraObjeto = new GameObject("BarraDash");
+        barraObjeto.transform.SetParent(fondoBarraObjeto.transform, false);
+
+        barraDash = barraObjeto.AddComponent<Image>();
+        barraDash.color = new Color(0.35f, 1f, 0.75f, 0.95f);
+        barraDash.raycastTarget = false;
+        barraDash.type = Image.Type.Filled;
+        barraDash.fillMethod = Image.FillMethod.Horizontal;
+        barraDash.fillOrigin = (int)Image.OriginHorizontal.Left;
+
+        RectTransform rectBarra = barraDash.rectTransform;
+        rectBarra.anchorMin = Vector2.zero;
+        rectBarra.anchorMax = Vector2.one;
+        rectBarra.offsetMin = new Vector2(2f, 2f);
+        rectBarra.offsetMax = new Vector2(-2f, -2f);
+
         ActualizarIndicadorDash();
     }
 
@@ -224,12 +263,22 @@ public class NaveMovimiento : MonoBehaviour
         {
             textoDash.text = "Dash listo";
             textoDash.color = new Color(0.35f, 1f, 0.75f, 1f);
+            ActualizarBarraDash(1f);
             return;
         }
 
         float tiempoRestante = tiempoUltimoDash + recargaDash - Time.time;
         textoDash.text = $"Dash: {tiempoRestante:0.0}s";
         textoDash.color = new Color(1f, 0.75f, 0.35f, 1f);
+        ActualizarBarraDash(Mathf.Clamp01((recargaDash - tiempoRestante) / recargaDash));
+    }
+
+    private void ActualizarBarraDash(float progreso)
+    {
+        if (barraDash != null)
+        {
+            barraDash.fillAmount = progreso;
+        }
     }
 
     public void Recentrar()
@@ -262,9 +311,71 @@ public class NaveMovimiento : MonoBehaviour
 
     private IEnumerator NaveGrandeTemporal(float duracion, float multiplicador)
     {
+        float tiempoEntrada = 0.45f;
+        float tiempoSalida = 0.25f;
+        float tiempo = 0f;
+        Color colorBrillo = new Color(1f, 0.9f, 0.25f, 1f);
+
+        while (tiempo < tiempoEntrada)
+        {
+            tiempo += Time.deltaTime;
+            float progreso = Mathf.Clamp01(tiempo / tiempoEntrada);
+            float pulso = 1f + Mathf.Sin(progreso * Mathf.PI) * 0.18f;
+            float escalaX = Mathf.Lerp(escalaOriginal.x, escalaOriginal.x * multiplicador, progreso) * pulso;
+
+            transform.localScale = new Vector3(escalaX, escalaOriginal.y, escalaOriginal.z);
+
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = Color.Lerp(colorOriginal, colorBrillo, Mathf.PingPong(tiempo * 8f, 1f));
+            }
+
+            yield return null;
+        }
+
         transform.localScale = new Vector3(escalaOriginal.x * multiplicador, escalaOriginal.y, escalaOriginal.z);
-        yield return new WaitForSeconds(duracion);
+
+        float tiempoActivo = Mathf.Max(0f, duracion - tiempoEntrada - tiempoSalida);
+        tiempo = 0f;
+
+        while (tiempo < tiempoActivo)
+        {
+            tiempo += Time.deltaTime;
+
+            if (spriteRenderer != null)
+            {
+                float brillo = 0.18f + Mathf.PingPong(tiempo * 2.5f, 0.18f);
+                spriteRenderer.color = Color.Lerp(colorOriginal, colorBrillo, brillo);
+            }
+
+            yield return null;
+        }
+
+        tiempo = 0f;
+
+        while (tiempo < tiempoSalida)
+        {
+            tiempo += Time.deltaTime;
+            float progreso = Mathf.Clamp01(tiempo / tiempoSalida);
+            float escalaX = Mathf.Lerp(escalaOriginal.x * multiplicador, escalaOriginal.x, progreso);
+
+            transform.localScale = new Vector3(escalaX, escalaOriginal.y, escalaOriginal.z);
+
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = Color.Lerp(colorBrillo, colorOriginal, progreso);
+            }
+
+            yield return null;
+        }
+
         transform.localScale = escalaOriginal;
+
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = colorOriginal;
+        }
+
         rutinaNaveGrande = null;
     }
 }
