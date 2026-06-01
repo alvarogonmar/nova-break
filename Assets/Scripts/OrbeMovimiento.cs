@@ -8,14 +8,21 @@ public class OrbeMovimiento : MonoBehaviour
     [SerializeField] private float maxAnguloRebote = 65f;
     [SerializeField] private Vector2 posicionInicio = new Vector2(0f, 1f);
     [SerializeField] private float esperaReinicio = 0.8f;
+    [SerializeField] private float minimoMovimientoVertical = 0.35f;
+    [SerializeField] private AudioClip sonidoRebote;
+    [SerializeField] private float volumenRebote = 0.45f;
+    [SerializeField] private bool ajustarHitboxAutomaticamente = true;
+    [SerializeField] private float margenHitbox = 0.92f;
 
     private Rigidbody2D rb;
     private float velocidadInicial;
+    private float ultimoSonidoRebote;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         velocidadInicial = velocidad;
+        AjustarHitboxVisual();
     }
 
     private void Start()
@@ -27,12 +34,13 @@ public class OrbeMovimiento : MonoBehaviour
     {
         if (rb.linearVelocity.sqrMagnitude > 0.01f)
         {
-            rb.linearVelocity = rb.linearVelocity.normalized * velocidad;
+            AjustarVelocidad(rb.linearVelocity);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        ReproducirSonidoRebote();
         Asteroide asteroide = collision.gameObject.GetComponent<Asteroide>();
 
         if (asteroide != null)
@@ -54,7 +62,18 @@ public class OrbeMovimiento : MonoBehaviour
         float angulo = factorRebote * maxAnguloRebote;
 
         Vector2 direccion = Quaternion.Euler(0f, 0f, -angulo) * Vector2.up;
-        rb.linearVelocity = direccion.normalized * velocidad;
+        AjustarVelocidad(direccion);
+    }
+
+    private void ReproducirSonidoRebote()
+    {
+        if (sonidoRebote == null || Time.time < ultimoSonidoRebote + 0.05f)
+        {
+            return;
+        }
+
+        ultimoSonidoRebote = Time.time;
+        AudioSource.PlayClipAtPoint(sonidoRebote, transform.position, volumenRebote);
     }
 
     public void ReiniciarOrbe()
@@ -70,7 +89,7 @@ public class OrbeMovimiento : MonoBehaviour
 
         if (rb.linearVelocity.sqrMagnitude > 0.01f)
         {
-            rb.linearVelocity = rb.linearVelocity.normalized * velocidad;
+            AjustarVelocidad(rb.linearVelocity);
         }
     }
 
@@ -89,7 +108,47 @@ public class OrbeMovimiento : MonoBehaviour
     {
         if (rb.linearVelocity.sqrMagnitude > 0.01f)
         {
-            rb.linearVelocity = rb.linearVelocity.normalized * velocidad;
+            AjustarVelocidad(rb.linearVelocity);
         }
+    }
+
+    private void AjustarVelocidad(Vector2 direccion)
+    {
+        if (direccion.sqrMagnitude <= 0.01f)
+        {
+            return;
+        }
+
+        direccion = direccion.normalized;
+
+        if (Mathf.Abs(direccion.y) < minimoMovimientoVertical)
+        {
+            float signoY = direccion.y >= 0f ? 1f : -1f;
+            direccion.y = signoY * minimoMovimientoVertical;
+            direccion.x = Mathf.Sign(direccion.x) * Mathf.Sqrt(1f - minimoMovimientoVertical * minimoMovimientoVertical);
+            direccion.Normalize();
+        }
+
+        rb.linearVelocity = direccion * velocidad;
+    }
+
+    private void AjustarHitboxVisual()
+    {
+        if (!ajustarHitboxAutomaticamente)
+        {
+            return;
+        }
+
+        CircleCollider2D collider = GetComponent<CircleCollider2D>();
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (collider == null || spriteRenderer == null || spriteRenderer.sprite == null)
+        {
+            return;
+        }
+
+        Bounds bounds = spriteRenderer.sprite.bounds;
+        collider.offset = bounds.center;
+        collider.radius = Mathf.Min(bounds.extents.x, bounds.extents.y) * margenHitbox;
     }
 }

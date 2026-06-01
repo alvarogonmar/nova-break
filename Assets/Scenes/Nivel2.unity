@@ -746,8 +746,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 402d5d90fd1dc4881ba89add133d243e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   velocidad: 11
   limiteX: 8
 --- !u!61 &2119304688
@@ -833,6 +833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2119304691}
   - component: {fileID: 2119304692}
+  - component: {fileID: 2119304693}
   m_Layer: 0
   m_Name: Fondo
   m_TagString: Untagged
@@ -849,8 +850,8 @@ Transform:
   m_GameObject: {fileID: 2119304690}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
+  m_LocalPosition: {x: 0.0723, y: 0.0723, z: 5}
+  m_LocalScale: {x: 1.2209661, y: 1.2075199, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -914,6 +915,29 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2119304693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119304690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0db93981644d40aa9a83e7401d05ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FondoGalaxia
+  tasaEmision: 45
+  velocidadEstrellas: 3.6
+  tiempoVida: 5
+  radioOrigen: 0.18
+  tamanoEstrella: {x: 0.025, y: 0.055}
+  maxParticulas: 500
+  sortingOrder: -9
+  colorPrincipal: {r: 1, g: 0.78, b: 0.55, a: 0.75}
+  colorSecundario: {r: 1, g: 0.25, b: 0.12, a: 0.55}
+  aperturaVertical: 0.58
+  precargaSegundos: 2.8
 --- !u!1 &2219304700
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,6 +1006,18 @@ SpriteRenderer:
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
@@ -1069,13 +1105,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2645927cc60d426f8b12300928bc1f5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   velocidad: 6
   velocidadMaxima: 30
   maxAnguloRebote: 65
   posicionInicio: {x: 0, y: 1}
   esperaReinicio: 0.8
+  minimoMovimientoVertical: 0.35
+  sonidoRebote: {fileID: 8300000, guid: b12e7eb42716b4a2198428801e2cbf9a, type: 3}
+  volumenRebote: 0.45
+  ajustarHitboxAutomaticamente: 1
+  margenHitbox: 0.92
 --- !u!1 &2219304710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,9 +1160,39 @@ BoxCollider2D:
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &2219304720
@@ -1167,9 +1238,39 @@ BoxCollider2D:
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &2219304730
@@ -1215,9 +1316,39 @@ BoxCollider2D:
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &2219304740
@@ -1264,9 +1395,39 @@ BoxCollider2D:
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &2219304743
@@ -1279,8 +1440,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b6ac614b87724b5da8c404d871f9247, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sonidoPerderVida: {fileID: 8300000, guid: 7aa812d1a10bf419fa2b3fb4450264a8, type: 3}
+  volumenSonido: 0.7
+  colorDano: {r: 1, g: 0, b: 0, a: 0.35}
+  duracionFlash: 0.35
 --- !u!1 &2219304800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,6 +1513,18 @@ SpriteRenderer:
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
@@ -1408,7 +1585,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a72bf2b9860784d8b9f1823b11bbce91, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroide
   generarFormacion: 1
   cantidad: 44
@@ -1423,6 +1600,26 @@ MonoBehaviour:
   incrementoVelocidad: 0.5
   incrementoVelocidadEspecial: 2.5
   escalaEspecial: 0.18
+  spriteResistente: {fileID: 0}
+  cantidadResistentes: 0
+  golpesResistente: 2
+  sonidoGolpeResistente: {fileID: 0}
+  incrementoVelocidadResistente: 0.65
+  escalaResistente: 0.15
+  puntosNormal: 100
+  puntosEspecial: 250
+  puntosResistente: 400
+  probabilidadPowerUp: 0.12
+  probabilidadExplosion: 0.4
+  spritePowerUpNaveGrande: {fileID: 4408241822026484976, guid: 775b0e66badc64f11a94f31cdb3a4465, type: 3}
+  spritePowerUpExplosion: {fileID: 5590203007942418338, guid: 416ec18bd5a40449c9384defb07aa9e0, type: 3}
+  sonidoPowerUp: {fileID: 8300000, guid: d94a0e97ece96418291ca4ecf1163173, type: 3}
+  animacionSuave: 1
+  velocidadRotacion: {x: -18, y: 18}
+  intensidadPulso: 0.03
+  velocidadPulso: 1.75
+  ajustarHitboxAlSprite: 1
+  margenHitbox: 0.92
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
