@@ -16,6 +16,8 @@ public class GameSession : MonoBehaviour
     private int asteroidesActivos;
     private int asteroidesRegistrados;
     private bool cambiandoNivel;
+    private bool verificandoFinNivel;
+    private bool partidaTerminada;
 
     private Text textoEstado;
     private Text textoMensaje;
@@ -64,6 +66,11 @@ public class GameSession : MonoBehaviour
 
     private void Update()
     {
+        if (partidaTerminada)
+        {
+            return;
+        }
+
         tiempoPartida += Time.deltaTime;
         ActualizarUI();
     }
@@ -83,9 +90,30 @@ public class GameSession : MonoBehaviour
     {
         asteroidesActivos = Mathf.Max(0, asteroidesActivos - 1);
 
-        if (asteroidesRegistrados == 0 || asteroidesActivos > 0 || cambiandoNivel)
+        if (cambiandoNivel || verificandoFinNivel)
         {
             return;
+        }
+
+        StartCoroutine(VerificarFinNivelDespuesDeDestruir());
+    }
+
+    private IEnumerator VerificarFinNivelDespuesDeDestruir()
+    {
+        verificandoFinNivel = true;
+
+        yield return null;
+
+        if (cambiandoNivel)
+        {
+            verificandoFinNivel = false;
+            yield break;
+        }
+
+        if (QuedanAsteroidesEnEscena())
+        {
+            verificandoFinNivel = false;
+            yield break;
         }
 
         string escenaActual = SceneManager.GetActiveScene().name;
@@ -102,6 +130,23 @@ public class GameSession : MonoBehaviour
         {
             VictoriaFinal();
         }
+
+        verificandoFinNivel = false;
+    }
+
+    private bool QuedanAsteroidesEnEscena()
+    {
+        Asteroide[] asteroides = FindObjectsByType<Asteroide>(FindObjectsSortMode.None);
+
+        foreach (Asteroide asteroide in asteroides)
+        {
+            if (asteroide.gameObject.activeInHierarchy)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public void SumarPuntos(int cantidad)
@@ -112,11 +157,17 @@ public class GameSession : MonoBehaviour
 
     public bool PerderVida()
     {
+        if (partidaTerminada)
+        {
+            return false;
+        }
+
         vidas = Mathf.Max(0, vidas - 1);
         ActualizarUI();
 
         if (vidas == 0)
         {
+            partidaTerminada = true;
             MostrarMensaje(CrearResumenFinal("Game Over"));
             MostrarBotonesFinales(true);
             return false;
@@ -152,6 +203,8 @@ public class GameSession : MonoBehaviour
         asteroidesActivos = 0;
         asteroidesRegistrados = 0;
         cambiandoNivel = false;
+        verificandoFinNivel = false;
+        partidaTerminada = false;
         CrearUI();
         OcultarMensaje();
         OcultarBotonesFinales();
@@ -431,8 +484,23 @@ public class GameSession : MonoBehaviour
     private void VictoriaFinal()
     {
         cambiandoNivel = true;
+        partidaTerminada = true;
         MostrarMensaje(CrearResumenFinal("Victoria final"));
         MostrarBotonesFinales(true);
+        ReproducirSonidoFinal("Sounds/win");
+    }
+
+    private void ReproducirSonidoFinal(string ruta)
+    {
+        AudioClip sonido = Resources.Load<AudioClip>(ruta);
+
+        if (sonido == null)
+        {
+            return;
+        }
+
+        Vector3 posicion = Camera.main != null ? Camera.main.transform.position : Vector3.zero;
+        AudioSource.PlayClipAtPoint(sonido, posicion, 1f);
     }
 
     private string CrearResumenFinal(string titulo)
@@ -450,6 +518,8 @@ public class GameSession : MonoBehaviour
         asteroidesActivos = 0;
         asteroidesRegistrados = 0;
         cambiandoNivel = false;
+        verificandoFinNivel = false;
+        partidaTerminada = false;
         OcultarMensaje();
         OcultarBotonesFinales();
         ActualizarUI();

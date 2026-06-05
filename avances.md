@@ -719,3 +719,216 @@ Antes de empezar cambios grandes, como un nivel infinito, se recomienda guardar 
 - Un tag estable.
 
 Asi se puede volver a esta version si los cambios nuevos no convencen.
+
+## 18. Avances del dia: victoria final y ajustes de Nivel3
+
+### Que se hizo
+
+Se corrigio y completo el final del juego en `Nivel3`.
+
+Antes, al terminar el Nivel3 podia pasar que no saliera la victoria, o que saliera la victoria pero la partida siguiera activa y la orbe siguiera cayendo, restando vidas aunque el jugador ya habia ganado.
+
+Hoy se hicieron estos cambios:
+
+- Se hizo mas robusta la deteccion de fin de nivel.
+- Se confirmo por que a veces no salia victoria.
+- Se ajusto el area de generacion de asteroides en `Nivel3`.
+- Se corrigio la posicion de los asteroides especiales.
+- Se detuvo la partida cuando aparece `Victoria final`.
+- Se evito que la zona de muerte siga restando vidas despues de ganar.
+- Se agrego sonido de victoria con `win.wav`.
+
+### Bug: terminaba Nivel3 y no salia victoria
+
+El problema era que el sistema dependia de un contador interno de asteroides. Si ese contador se desacomodaba, el jugador podia destruir visualmente todos los asteroides pero el juego podia pensar que todavia quedaba alguno.
+
+Tambien vimos en Unity que en el `Hierarchy` todavia aparecian objetos como:
+
+- `Asteroide_B_5`
+- `Asteroide_B_6`
+
+Eso significaba que no se habia terminado realmente el nivel, aunque pareciera que ya no habia asteroides visibles.
+
+### Como se corrigio
+
+En `GameSession.cs`, despues de destruir un asteroide, ahora el juego espera un frame y revisa directamente si queda algun objeto `Asteroide` activo en la escena.
+
+Se agrego una revision con:
+
+```csharp
+Asteroide[] asteroides = FindObjectsByType<Asteroide>(FindObjectsSortMode.None);
+```
+
+La idea es:
+
+1. Se destruye un asteroide.
+2. El juego espera un frame para dejar que Unity termine de destruir el objeto.
+3. Busca todos los `Asteroide` activos.
+4. Si ya no queda ninguno:
+   - En `Nivel1`, pasa a `Nivel2`.
+   - En `Nivel2`, pasa a `Nivel3`.
+   - En `Nivel3`, muestra `Victoria final`.
+
+### Bug: asteroides se generaban en la esquina superior derecha
+
+En `Nivel3`, algunos asteroides especiales aparecian arriba a la derecha, justo donde esta el HUD del dash.
+
+Esto pasaba por dos razones:
+
+- El area de generacion estaba muy grande hacia arriba y hacia la derecha.
+- La formula de asteroides especiales estaba pensada para pocos asteroides especiales, pero en `Nivel3` hay mas.
+
+### Donde se le pico en Unity
+
+En la escena `Nivel3`:
+
+1. Se selecciono `GeneradorAsteroides`.
+2. En el Inspector se busco el componente `Asteroide`.
+3. Se ajustaron los valores del area de generacion.
+
+Antes estaba aproximadamente asi:
+
+```text
+Area Minima: X = -7.4, Y = 1.45
+Area Maxima: X = 7.4, Y = 4.65
+```
+
+Ahora quedo asi:
+
+```text
+Area Minima: X = -7.1, Y = 1.35
+Area Maxima: X = 6.1, Y = 4
+```
+
+Con esto los asteroides ya no se generan tan pegados al borde superior derecho.
+
+### Cambio en Asteroide.cs
+
+Tambien se corrigio la funcion que coloca asteroides especiales.
+
+Antes, la posicion especial podia mandar asteroides demasiado a la derecha cuando habia mas de 3 especiales.
+
+Ahora se distribuyen dentro del area segura usando un progreso de 0 a 1:
+
+```csharp
+float margenHorizontal = 0.8f;
+float cantidad = Mathf.Max(1, cantidadEspeciales);
+float progreso = (indice + 0.5f) / cantidad;
+float x = Mathf.Lerp(areaMinima.x + margenHorizontal, areaMaxima.x - margenHorizontal, progreso);
+float y = areaMaxima.y - 0.75f;
+```
+
+Esto hace que los asteroides especiales se repartan de forma ordenada, pero sin invadir la esquina del HUD.
+
+### Bug: despues de ganar seguia perdiendo vidas
+
+Cuando salia `Victoria final`, la orbe podia seguir moviendose. Si despues caia a la zona de muerte, el juego seguia restando vidas.
+
+Eso se sentia mal porque el jugador ya habia ganado.
+
+### Como se corrigio
+
+En `GameSession.cs` se agrego una variable:
+
+```csharp
+private bool partidaTerminada;
+```
+
+Cuando aparece `Victoria final`:
+
+```csharp
+partidaTerminada = true;
+```
+
+Y en `PerderVida()` se revisa:
+
+```csharp
+if (partidaTerminada)
+{
+    return false;
+}
+```
+
+Asi, si la partida ya termino, la zona de muerte ya no puede restar vidas.
+
+### Cambio en ZonaMuerte.cs
+
+En `ZonaMuerte.cs`, ahora si `PerderVida()` regresa `false`, ya no se hace nada mas.
+
+Esto evita que despues de victoria o game over se siga reproduciendo:
+
+- Sonido de perder vida.
+- Flash de dano.
+- Recentrar nave.
+- Reiniciar orbe.
+
+La logica quedo asi:
+
+```csharp
+bool quedanVidas = GameSession.Instancia.PerderVida();
+OrbeMovimiento orbe = collision.GetComponent<OrbeMovimiento>();
+
+if (!quedanVidas)
+{
+    return;
+}
+```
+
+### Sonido de victoria
+
+Se agrego sonido cuando el jugador gana.
+
+El sonido usado fue:
+
+```text
+Assets/Sounds/win.wav
+```
+
+Como `GameSession` se crea por codigo, se copio tambien a:
+
+```text
+Assets/Resources/Sounds/win.wav
+```
+
+Esto permite cargarlo con:
+
+```csharp
+Resources.Load<AudioClip>("Sounds/win");
+```
+
+Y reproducirlo cuando aparece `Victoria final`:
+
+```csharp
+ReproducirSonidoFinal("Sounds/win");
+```
+
+### Archivos modificados hoy
+
+- `Assets/Scripts/GameSession.cs`
+- `Assets/Scripts/Asteroide.cs`
+- `Assets/Scripts/ZonaMuerte.cs`
+- `Assets/Scenes/Nivel3.unity`
+- `Assets/Resources/Sounds/win.wav`
+
+### Como probar que ya quedo
+
+1. Abrir `Nivel3`.
+2. Dar Play.
+3. Destruir todos los asteroides.
+4. Verificar que aparece `Victoria final`.
+5. Verificar que suena `win.wav`.
+6. Dejar que la orbe caiga despues de ganar.
+7. Confirmar que ya no se restan vidas.
+8. Confirmar que el tiempo final queda fijo.
+9. Confirmar que aparecen los botones finales.
+
+### Estado despues de estos cambios
+
+Ahora el final del juego ya esta mas completo:
+
+- Si se termina `Nivel3`, sale victoria.
+- La victoria muestra resumen de puntos y tiempo.
+- La victoria reproduce sonido.
+- La partida se detiene al ganar.
+- La zona de muerte ya no sigue afectando al jugador despues de ganar.
+- Los asteroides de `Nivel3` ya no se generan encima del HUD.

@@ -15,12 +15,18 @@ public class ZonaMuerte : MonoBehaviour
         {
             Debug.Log("Perdiste una vida");
             bool quedanVidas = GameSession.Instancia.PerderVida();
+            OrbeMovimiento orbe = collision.GetComponent<OrbeMovimiento>();
+
+            if (!quedanVidas)
+            {
+                return;
+            }
+
             ReproducirSonidoPerderVida();
             StartCoroutine(MostrarFlashDano());
             RecentrarNave();
-            OrbeMovimiento orbe = collision.GetComponent<OrbeMovimiento>();
 
-            if (orbe != null && quedanVidas)
+            if (orbe != null)
             {
                 orbe.ReiniciarOrbe();
             }

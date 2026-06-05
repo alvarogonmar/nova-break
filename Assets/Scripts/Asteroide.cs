@@ -199,11 +199,11 @@ public class Asteroide : MonoBehaviour
 
     private Vector2 ObtenerPosicionEspecial(int indice)
     {
-        float centroX = (areaMinima.x + areaMaxima.x) * 0.5f;
-        float ancho = areaMaxima.x - areaMinima.x;
-        float separacion = ancho / 4f;
-        float x = centroX + (indice - 1) * separacion;
-        float y = areaMaxima.y - 0.25f;
+        float margenHorizontal = 0.8f;
+        float cantidad = Mathf.Max(1, cantidadEspeciales);
+        float progreso = (indice + 0.5f) / cantidad;
+        float x = Mathf.Lerp(areaMinima.x + margenHorizontal, areaMaxima.x - margenHorizontal, progreso);
+        float y = areaMaxima.y - 0.75f;
 
         return new Vector2(x, y);
     }
